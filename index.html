@@ -2,799 +2,319 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<meta name="theme-color" content="#0a0f1e">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<!-- PWA Meta -->
+<meta name="theme-color" content="#1a1035">
 <meta name="mobile-web-app-capable" content="true">
 <meta name="apple-mobile-web-app-capable" content="true">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="6 Nations 2026">
-<title>Tournoi des 6 Nations 2026</title>
-<link rel="manifest" href="data:application/manifest+json,{
-  %22name%22:%226%20Nations%202026%22,
-  %22short_name%22:%226%20Nations%22,
-  %22description%22:%22Tournoi%20des%206%20Nations%202026%20-%20Matchs%20et%20Classement%22,
-  %22start_url%22:%22.%22,
-  %22display%22:%22standalone%22,
-  %22background_color%22:%22%23060b18%22,
-  %22theme_color%22:%22%230a0f1e%22,
-  %22orientation%22:%22portrait%22,
-  %22icons%22:[
-    {%22src%22:%22data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20192%20192'%3E%3Crect%20width='192'%20height='192'%20rx='32'%20fill='%230d1526'/%3E%3Ctext%20y='130'%20x='96'%20text-anchor='middle'%20font-size='120'%3E🏉%3C/text%3E%3C/svg%3E%22,%22sizes%22:%22192x192%22,%22type%22:%22image/svg+xml%22},
-    {%22src%22:%22data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20512'%3E%3Crect%20width='512'%20height='512'%20rx='80'%20fill='%230d1526'/%3E%3Ctext%20y='360'%20x='256'%20text-anchor='middle'%20font-size='320'%3E🏉%3C/text%3E%3C/svg%3E%22,%22sizes%22:%22512x512%22,%22type%22:%22image/svg+xml%22}
-  ]
-}">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<meta name="apple-mobile-web-app-title" content="Skyjo">
+<meta name="application-name" content="Skyjo">
+<meta name="description" content="Skyjo Multijoueur — Jouez en ligne avec vos amis">
+
+<title>Skyjo</title>
+
+<!-- Apple touch icons (inline SVG → base64) -->
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxODAgMTgwIj48cmVjdCB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgcng9IjM2IiBmaWxsPSIjMWExMDM1Ii8+PHJlY3QgeD0iMjQiIHk9IjI0IiB3aWR0aD0iNjAiIGhlaWdodD0iODQiIHJ4PSIxMCIgZmlsbD0iI2ZmZiIgb3BhY2l0eT0iLjk1Ii8+PHJlY3QgeD0iOTYiIHk9IjI0IiB3aWR0aD0iNjAiIGhlaWdodD0iODQiIHJ4PSIxMCIgZmlsbD0iI2ZmNWQ1ZCIgb3BhY2l0eT0iLjk1Ii8+PHJlY3QgeD0iMjQiIHk9Ijc2IiB3aWR0aD0iNjAiIGhlaWdodD0iODAiIHJ4PSIxMCIgZmlsbD0iIzVkYjVmZiIgb3BhY2l0eT0iLjk1Ii8+PHJlY3QgeD0iOTYiIHk9Ijc2IiB3aWR0aD0iNjAiIGhlaWdodD0iODAiIHJ4PSIxMCIgZmlsbD0iIzZkZmY5MyIgb3BhY2l0eT0iLjk1Ii8+PHRleHQgeD0iOTAiIHk9IjE2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IidHZW9yZ2lhJyxzZXJpZiIgZm9udC13ZWlnaHQ9IjcwMCIgZm9udC1zaXplPSIyMiIgZmlsbD0id2hpdGUiIGxldHRlci1zcGFjaW5nPSI0Ij5TS1lKTzwvdGV4dD48L3N2Zz4=">
+
+<!-- PWA Manifest — inline via data URI -->
+<link rel="manifest" id="manifest-placeholder">
+
 <style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
   :root {
-    --bg: #060b18;
-    --surface: #0d1526;
-    --surface2: #111d35;
-    --border: rgba(255,255,255,0.07);
-    --accent: #e8b84b;
-    --accent2: #c0392b;
-    --text: #e8ecf4;
-    --muted: #6b7a99;
-    --green: #27ae60;
-    --radius: 14px;
+    --bg: #1a1035;
+    --accent: #7c5cfc;
+    --accent2: #ff5d5d;
+    --text: #f0ecff;
+    --muted: #8b7fc0;
   }
-  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-  body {
+
+  html, body {
+    width: 100%; height: 100%;
     background: var(--bg);
-    color: var(--text);
-    font-family: 'Barlow', sans-serif;
-    min-height: 100vh;
-    overflow-x: hidden;
+    overflow: hidden;
+    font-family: 'Georgia', serif;
   }
 
-  /* Noise texture overlay */
-  body::before {
-    content: '';
-    position: fixed; inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none; z-index: 0; opacity: 0.4;
+  /* ── SPLASH / LOADER ── */
+  #splash {
+    position: fixed; inset: 0; z-index: 200;
+    background: var(--bg);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 24px;
+    transition: opacity 0.5s, visibility 0.5s;
   }
+  #splash.hidden { opacity: 0; visibility: hidden; }
 
-  /* Header */
-  header {
-    position: sticky; top: 0; z-index: 100;
-    background: rgba(6,11,24,0.92);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border);
-    padding: 14px 16px;
-    display: flex; align-items: center; justify-content: space-between;
-  }
-  .logo {
-    display: flex; align-items: center; gap: 10px;
-  }
-  .logo-badge {
-    background: var(--accent);
-    color: #000;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 18px;
-    padding: 3px 10px;
-    border-radius: 6px;
-    letter-spacing: 1px;
-  }
-  .logo-text {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 17px;
-    letter-spacing: 0.5px;
-    line-height: 1.1;
-  }
-  .logo-text span { color: var(--muted); font-weight: 400; font-size: 13px; display: block; }
-  .live-dot {
-    width: 8px; height: 8px;
-    background: var(--accent2);
-    border-radius: 50%;
-    animation: pulse 1.5s infinite;
-  }
-  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.3)} }
-
-  /* Tabs */
-  .tabs {
-    display: flex;
-    background: var(--surface);
-    margin: 16px 16px 0;
-    border-radius: var(--radius);
-    padding: 4px;
-    gap: 4px;
-    border: 1px solid var(--border);
-  }
-  .tab {
-    flex: 1;
-    padding: 10px 0;
-    text-align: center;
-    border-radius: 10px;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.25s;
-    color: var(--muted);
-    border: none;
-    background: transparent;
-  }
-  .tab.active {
-    background: var(--accent);
-    color: #000;
-  }
-
-  /* Content */
-  .content { padding: 16px; position: relative; z-index: 1; }
-  .section { display: none; }
-  .section.active { display: block; }
-
-  /* Round labels */
-  .round-label {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 13px;
-    letter-spacing: 3px;
-    color: var(--muted);
-    text-transform: uppercase;
-    margin: 20px 0 10px;
-    display: flex; align-items: center; gap: 8px;
-  }
-  .round-label::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-  }
-
-  /* Match card */
-  .match-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 14px;
-    margin-bottom: 10px;
-    transition: transform 0.15s, border-color 0.15s;
-    animation: fadeUp 0.4s ease both;
-  }
-  .match-card:active { transform: scale(0.98); }
-  .match-card.played { opacity: 0.65; }
-  .match-card.next-match {
-    border-color: var(--accent);
-    box-shadow: 0 0 20px rgba(232,184,75,0.12);
-  }
-  @keyframes fadeUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
-
-  .match-meta {
-    display: flex; justify-content: space-between; align-items: center;
-    margin-bottom: 12px;
-  }
-  .match-date { font-size: 12px; color: var(--muted); }
-  .match-badge {
-    font-size: 10px;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding: 2px 8px;
-    border-radius: 20px;
-  }
-  .badge-upcoming { background: rgba(232,184,75,0.15); color: var(--accent); }
-  .badge-played { background: rgba(107,122,153,0.15); color: var(--muted); }
-  .badge-next { background: var(--accent); color: #000; animation: pulse 2s infinite; }
-
-  .match-teams {
+  .splash-cards {
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
+    width: 100px;
+    animation: float 3s ease-in-out infinite;
   }
-  .team { display: flex; flex-direction: column; align-items: center; gap: 6px; }
-  .team-flag { font-size: 32px; line-height: 1; }
-  .team-name {
-    font-family: 'Barlow Condensed', sans-serif;
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+
+  .splash-card {
+    height: 56px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  }
+  .c1 { background: #fff; color: #1a1035; }
+  .c2 { background: #ff5d5d; }
+  .c3 { background: #5db5ff; }
+  .c4 { background: #6dff93; color: #1a1035; }
+
+  .splash-title {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+
+  .splash-loader {
+    width: 48px; height: 3px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .splash-loader::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 40%;
+    background: var(--accent);
+    border-radius: 3px;
+    animation: load 1.2s ease-in-out infinite;
+  }
+  @keyframes load { 0%{transform:translateX(-150%)} 100%{transform:translateX(350%)} }
+
+  /* ── INSTALL BANNER ── */
+  #install-bar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 150;
+    display: none;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px calc(16px + env(safe-area-inset-bottom));
+    background: rgba(20, 12, 50, 0.97);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(124, 92, 252, 0.3);
+    box-shadow: 0 -8px 40px rgba(0,0,0,0.6);
+    animation: slideUp 0.35s cubic-bezier(0.34,1.56,0.64,1) both;
+  }
+  @keyframes slideUp { from{transform:translateY(100%)} to{transform:translateY(0)} }
+
+  .install-icon {
+    width: 52px; height: 52px;
+    background: var(--accent);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 16px rgba(124,92,252,0.5);
+  }
+  .install-text { flex: 1; }
+  .install-text strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: 0.5px;
+    margin-bottom: 3px;
+  }
+  .install-text span {
+    font-size: 12px;
+    color: var(--muted);
+    font-family: -apple-system, sans-serif;
+  }
+  .install-btn {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-family: -apple-system, sans-serif;
     font-weight: 700;
     font-size: 14px;
-    letter-spacing: 0.5px;
-    text-align: center;
-    text-transform: uppercase;
+    cursor: pointer;
+    flex-shrink: 0;
+    box-shadow: 0 4px 16px rgba(124,92,252,0.4);
+    transition: transform 0.15s, box-shadow 0.15s;
   }
-  .team-score {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 28px;
-    color: var(--accent);
+  .install-btn:active { transform: scale(0.96); }
+  .install-close {
+    background: none; border: none;
+    color: var(--muted);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 6px;
+    flex-shrink: 0;
     line-height: 1;
   }
 
-  .vs-block { text-align: center; }
-  .vs-text {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 20px;
-    color: var(--muted);
-    display: block;
-  }
-  .score-display {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 26px;
-    color: var(--text);
-    letter-spacing: 2px;
-  }
-
-  .match-venue {
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 1px solid var(--border);
-    font-size: 11px;
-    color: var(--muted);
-    display: flex; align-items: center; gap: 6px;
-  }
-  .match-venue::before { content: '📍'; font-size: 10px; }
-  .match-time {
-    margin-left: auto;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 600;
-    font-size: 12px;
-    color: var(--accent);
-  }
-
-  /* Standings */
-  .standings-table {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
-  }
-  .standings-header {
-    display: grid;
-    grid-template-columns: 28px 1fr 36px 36px 36px 36px 36px 36px;
-    gap: 4px;
-    padding: 10px 14px;
-    background: var(--surface2);
-    border-bottom: 1px solid var(--border);
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-  .standings-row {
-    display: grid;
-    grid-template-columns: 28px 1fr 36px 36px 36px 36px 36px 36px;
-    gap: 4px;
-    padding: 12px 14px;
-    border-bottom: 1px solid var(--border);
-    align-items: center;
-    animation: fadeUp 0.4s ease both;
-    transition: background 0.15s;
-  }
-  .standings-row:last-child { border-bottom: none; }
-  .standings-row:nth-child(2) { border-left: 3px solid var(--accent); }
-  .standings-row:hover { background: rgba(255,255,255,0.02); }
-
-  .rank {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 16px;
-    color: var(--muted);
-    text-align: center;
-  }
-  .rank.gold { color: var(--accent); }
-  .team-info { display: flex; align-items: center; gap: 8px; }
-  .team-flag-sm { font-size: 20px; }
-  .team-name-sm {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 0.3px;
-  }
-  .stat {
-    text-align: center;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-  }
-  .stat.pts {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 18px;
-    color: var(--accent);
-  }
-  .stat.pd { color: var(--green); }
-  .stat.pd.neg { color: var(--accent2); }
-
-  /* Info banner */
-  .info-banner {
-    background: linear-gradient(135deg, rgba(232,184,75,0.1), rgba(192,57,43,0.1));
-    border: 1px solid rgba(232,184,75,0.2);
-    border-radius: var(--radius);
-    padding: 14px;
-    margin-bottom: 16px;
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.5;
-  }
-  .info-banner strong { color: var(--accent); }
-
-  /* Install prompt */
-  .install-banner {
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 14px;
-    margin: 0 16px 16px;
-    display: flex; align-items: center; gap: 12px;
-    font-size: 13px;
-    animation: fadeUp 0.5s ease both;
-  }
-  .install-icon { font-size: 28px; flex-shrink: 0; }
-  .install-text { flex: 1; line-height: 1.4; color: var(--muted); }
-  .install-text strong { color: var(--text); display: block; margin-bottom: 2px; }
-  .install-btn {
-    background: var(--accent);
-    color: #000;
-    border: none;
-    padding: 8px 14px;
-    border-radius: 8px;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 0.5px;
-    cursor: pointer;
-    flex-shrink: 0;
-  }
-  .close-banner {
-    background: none;
-    border: none;
-    color: var(--muted);
-    font-size: 18px;
-    cursor: pointer;
-    padding: 4px;
-    flex-shrink: 0;
-  }
-  #pwaInstallBar {
+  /* iOS instructions banner */
+  #ios-bar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 150;
     display: none;
-    background: linear-gradient(135deg, #1a2a10, #0f1e0a);
-    border: 1px solid rgba(39,174,96,0.35);
-    border-radius: var(--radius);
-    padding: 14px;
-    margin: 0 16px 12px;
-    align-items: center;
+    flex-direction: column;
     gap: 12px;
-    animation: fadeUp 0.4s ease both;
+    padding: 20px 20px calc(20px + env(safe-area-inset-bottom));
+    background: rgba(20, 12, 50, 0.97);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(124,92,252,0.3);
+    text-align: center;
+    animation: slideUp 0.35s ease both;
   }
-  #pwaInstallBar .pwa-icon { font-size: 26px; flex-shrink:0; }
-  #pwaInstallBar .pwa-text { flex:1; font-size:13px; line-height:1.4; color:var(--muted); }
-  #pwaInstallBar .pwa-text strong { color: #5dde8a; display:block; margin-bottom:2px; }
-  #pwaInstallBar .pwa-btn {
-    background: #27ae60; color: #fff;
-    border: none; padding: 9px 16px;
-    border-radius: 8px;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700; font-size: 13px; letter-spacing: 0.5px;
-    cursor: pointer; flex-shrink:0;
+  #ios-bar strong { color: var(--text); font-size: 15px; display: block; margin-bottom: 4px; }
+  #ios-bar span { color: var(--muted); font-size: 13px; font-family: -apple-system, sans-serif; line-height: 1.5; }
+  #ios-bar button {
+    background: var(--accent);
+    color: #fff; border: none;
+    padding: 10px 24px; border-radius: 30px;
+    font-weight: 700; font-size: 13px;
+    cursor: pointer; align-self: center;
+    font-family: -apple-system, sans-serif;
   }
 
-  /* Top strip */
-  .champion-strip {
-    background: linear-gradient(90deg, var(--accent2), #8e1a11);
-    padding: 8px 16px;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 13px;
-    letter-spacing: 3px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .champion-strip::before {
-    content: '🏆 FRANCE — CHAMPIONS EN TITRE 2025 🏆';
-    white-space: nowrap;
-    animation: scroll 10s linear infinite;
-    display: inline-block;
-  }
-  @keyframes scroll { 0%{transform:translateX(100%)} 100%{transform:translateX(-100%)} }
-
-  .footer {
-    text-align: center;
-    padding: 20px;
-    font-size: 11px;
-    color: var(--muted);
-    border-top: 1px solid var(--border);
-    margin-top: 16px;
+  /* ── IFRAME ── */
+  #game-frame {
+    position: fixed;
+    inset: 0;
+    width: 100%; height: 100%;
+    border: none;
+    background: var(--bg);
+    /* Padding bottom for install bar if shown */
+    transition: height 0.3s;
   }
 </style>
 </head>
 <body>
 
-<div class="champion-strip"></div>
-
-<header>
-  <div class="logo">
-    <span class="logo-badge">M6N</span>
-    <div class="logo-text">
-      Tournoi des 6 Nations
-      <span>Saison 2026</span>
-    </div>
+<!-- Splash screen -->
+<div id="splash">
+  <div class="splash-cards">
+    <div class="splash-card c1">-2</div>
+    <div class="splash-card c2">8</div>
+    <div class="splash-card c3">5</div>
+    <div class="splash-card c4">0</div>
   </div>
-  <div class="live-dot"></div>
-</header>
-
-<!-- Banner vert PWA : apparaît automatiquement si le navigateur supporte l'installation -->
-<div id="pwaInstallBar">
-  <span class="pwa-icon">🚀</span>
-  <div class="pwa-text">
-    <strong>Installer l'application</strong>
-    Ajoute l'app sur ton écran d'accueil !
-  </div>
-  <button class="pwa-btn" id="pwaInstallBtn">Installer</button>
-  <button class="close-banner" onclick="document.getElementById('pwaInstallBar').style.display='none'">✕</button>
+  <div class="splash-title">Skyjo</div>
+  <div class="splash-loader"></div>
 </div>
 
-<div class="install-banner" id="installBanner">
-  <span class="install-icon">📲</span>
+<!-- Install bar (Android/Brave) -->
+<div id="install-bar">
+  <div class="install-icon">🃏</div>
   <div class="install-text">
-    <strong>Installer comme app</strong>
-    Menu ⋮ → "Ajouter à l'écran d'accueil"
+    <strong>Installer Skyjo</strong>
+    <span>Ajouter à l'écran d'accueil</span>
   </div>
-  <button class="close-banner" onclick="document.getElementById('installBanner').style.display='none'">✕</button>
+  <button class="install-btn" id="install-btn">Installer</button>
+  <button class="install-close" onclick="dismissInstall()">✕</button>
 </div>
 
-<div class="tabs" style="margin-top:0">
-  <button class="tab active" onclick="showSection('matchs', this)">Matchs</button>
-  <button class="tab" onclick="showSection('classement', this)">Classement</button>
-  <button class="tab" onclick="showSection('infos', this)">Infos</button>
+<!-- iOS install instructions -->
+<div id="ios-bar">
+  <div>
+    <strong>📲 Installer sur iPhone</strong>
+    <span>Appuyez sur <b>□↑</b> (Partager) puis <b>"Sur l'écran d'accueil"</b></span>
+  </div>
+  <button onclick="document.getElementById('ios-bar').style.display='none'">OK compris</button>
 </div>
 
-<div class="content">
-
-  <!-- MATCHS -->
-  <div class="section active" id="section-matchs">
-
-    <!-- JOURNÉE 1 -->
-    <div class="round-label">Journée 1 — 5-7 Fév</div>
-
-    <div class="match-card played">
-      <div class="match-meta">
-        <span class="match-date">Jeu 5 Fév 2026</span>
-        <span class="match-badge badge-played">Terminé</span>
-      </div>
-      <div class="match-teams">
-        <div class="team"><span class="team-flag">🇫🇷</span><span class="team-name">France</span></div>
-        <div class="vs-block"><span class="score-display">45 · 21</span></div>
-        <div class="team"><span class="team-flag">🇮🇪</span><span class="team-name">Irlande</span></div>
-      </div>
-      <div class="match-venue">Stade de France, Paris <span class="match-time">21h10</span></div>
-    </div>
-
-    <div class="match-card played">
-      <div class="match-meta">
-        <span class="match-date">Sam 7 Fév 2026</span>
-        <span class="match-badge badge-played">Terminé</span>
-      </div>
-      <div class="match-teams">
-        <div class="team"><span class="team-flag">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span><span class="team-name">Écosse</span></div>
-        <div class="vs-block"><span class="score-display">27 · 24</span></div>
-        <div class="team"><span class="team-flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span><span class="team-name">Angleterre</span></div>
-      </div>
-      <div class="match-venue">Murrayfield, Édimbourg <span class="match-time">15h10</span></div>
-    </div>
-
-    <div class="match-card played">
-      <div class="match-meta">
-        <span class="match-date">Sam 7 Fév 2026</span>
-        <span class="match-badge badge-played">Terminé</span>
-      </div>
-      <div class="match-teams">
-        <div class="team"><span class="team-flag">🇮🇹</span><span class="team-name">Italie</span></div>
-        <div class="vs-block"><span class="score-display">17 · 29</span></div>
-        <div class="team"><span class="team-flag">🏴󠁧󠁢󠁷󠁬󠁳󠁿</span><span class="team-name">Pays de Galles</span></div>
-      </div>
-      <div class="match-venue">Stadio Olimpico, Rome <span class="match-time">16h40</span></div>
-    </div>
-
-    <!-- JOURNÉE 2 -->
-    <div class="round-label">Journée 2 — 14-15 Fév</div>
-
-    <div class="match-card played">
-      <div class="match-meta">
-        <span class="match-date">Sam 14 Fév 2026</span>
-        <span class="match-badge badge-played">Terminé</span>
-      </div>
-      <div class="match-teams">
-        <div class="team"><span class="team-flag">🏴󠁧󠁢󠁷󠁬󠁳󠁿</span><span class="team-name">Pays de Galles</span></div>
-        <div class="vs-block"><span class="score-display">14 · 57</span></div>
-        <div class="team"><span class="team-flag">🇫🇷</span><span class="team-name">France</span></div>
-      </div>
-      <div class="match-venue">Principality Stadium, Cardiff <span class="match-time">14h10</span></div>
-    </div>
-
-    <div class="match-card played">
-      <div class="match-meta">
-        <span class="match-date">Sam 14 Fév 2026</span>
-        <span class="match-badge badge-played">Terminé</span>
-      </div>
-      <div class="match-teams">
-        <div class="team"><span class="team-flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span><span class="team-name">Angleterre</span></div>
-        <div class="vs-block"><span class="score-display">23 · 42</span></div>
-        <div class="team"><span class="team-flag">🇮🇪</span><span class="team-name">Irlande</span></div>
-      </div>
-      <div class="match-venue">Twickenham, Londres <span class="match-time">16h40</span></div>
-    </div>
-
-    <div class="match-card played">
-      <div class="match-meta">
-        <span class="match-date">Dim 15 Fév 2026</span>
-        <span class="match-badge badge-played">Terminé</span>
-      </div>
-      <div class="match-teams">
-        <div class="team"><span class="team-flag">🇮🇹</span><span class="team-name">Italie</span></div>
-        <div class="vs-block"><span class="score-display">18 · 31</span></div>
-        <div class="team"><span class="team-flag">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span><span class="team-name">Écosse</span></div>
-      </div>
-      <div class="match-venue">Stadio Olimpico, Rome <span class="match-time">15h10</span></div>
-    </div>
-
-    <!-- JOURNÉE 3 -->
-    <div class="round-label">Journée 3 — 21-22 Fév</div>
-
-    <div class="match-card played">
-      <div class="match-meta">
-        <span class="match-date">Sam 21 Fév 2026</span>
-        <span class="match-badge badge-played">Terminé</span>
-      </div>
-      <div class="match-teams">
-        <div class="team"><span class="team-flag">🇮🇪</span><span class="team-name">Irlande</span></div>
-        <div class="vs-block"><span class="score-display">21 · 14</span></div>
-        <div class="team"><span class="team-flag">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span><span class="team-name">Écosse</span></div>
-      </div>
-      <div class="match-venue">Aviva Stadium, Dublin <span class="match-time">14h10</span></div>
-    </div>
-
-    <div class="match-card played">
-      <div class="match-meta">
-        <span class="match-date">Sam 21 Fév 2026</span>
-        <span class="match-badge badge-played">Terminé</span>
-      </div>
-      <div class="match-teams">
-        <div class="team"><span class="team-flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span><span class="team-name">Angleterre</span></div>
-        <div class="vs-block"><span class="score-display">30 · 17</span></div>
-        <div class="team"><span class="team-flag">🇮🇹</span><span class="team-name">Italie</span></div>
-      </div>
-      <div class="match-venue">Twickenham, Londres <span class="match-time">16h40</span></div>
-    </div>
-
-    <div class="match-card played">
-      <div class="match-meta">
-        <span class="match-date">Dim 22 Fév 2026</span>
-        <span class="match-badge badge-played">Terminé</span>
-      </div>
-      <div class="match-teams">
-        <div class="team"><span class="team-flag">🇫🇷</span><span class="team-name">France</span></div>
-        <div class="vs-block"><span class="score-display">38 · 10</span></div>
-        <div class="team"><span class="team-flag">🏴󠁧󠁢󠁷󠁬󠁳󠁿</span><span class="team-name">Pays de Galles</span></div>
-      </div>
-      <div class="match-venue">Stade de France, Paris <span class="match-time">16h10</span></div>
-    </div>
-
-    <!-- JOURNÉE 4 -->
-    <div class="round-label">⚡ Journée 4 — 6-7 Mar</div>
-
-    <div class="match-card next-match">
-      <div class="match-meta">
-        <span class="match-date">Ven 6 Mar 2026</span>
-        <span class="match-badge badge-next">Prochain</span>
-      </div>
-      <div class="match-teams">
-        <div class="team"><span class="team-flag">🇮🇪</span><span class="team-name">Irlande</span></div>
-        <div class="vs-block"><span class="vs-text">vs</span></div>
-        <div class="team"><span class="team-flag">🏴󠁧󠁢󠁷󠁬󠁳󠁿</span><span class="team-name">Pays de Galles</span></div>
-      </div>
-      <div class="match-venue">Aviva Stadium, Dublin <span class="match-time">20h10</span></div>
-    </div>
-
-    <div class="match-card">
-      <div class="match-meta">
-        <span class="match-date">Sam 7 Mar 2026</span>
-        <span class="match-badge badge-upcoming">À venir</span>
-      </div>
-      <div class="match-teams">
-        <div class="team"><span class="team-flag">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span><span class="team-name">Écosse</span></div>
-        <div class="vs-block"><span class="vs-text">vs</span></div>
-        <div class="team"><span class="team-flag">🇫🇷</span><span class="team-name">France</span></div>
-      </div>
-      <div class="match-venue">Murrayfield, Édimbourg <span class="match-time">14h10</span></div>
-    </div>
-
-    <div class="match-card">
-      <div class="match-meta">
-        <span class="match-date">Sam 7 Mar 2026</span>
-        <span class="match-badge badge-upcoming">À venir</span>
-      </div>
-      <div class="match-teams">
-        <div class="team"><span class="team-flag">🇮🇹</span><span class="team-name">Italie</span></div>
-        <div class="vs-block"><span class="vs-text">vs</span></div>
-        <div class="team"><span class="team-flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span><span class="team-name">Angleterre</span></div>
-      </div>
-      <div class="match-venue">Stadio Olimpico, Rome <span class="match-time">17h40</span></div>
-    </div>
-
-    <!-- JOURNÉE 5 -->
-    <div class="round-label">🏆 Journée 5 — 14 Mar (Grand Chelem ?)</div>
-
-    <div class="match-card">
-      <div class="match-meta">
-        <span class="match-date">Sam 14 Mar 2026</span>
-        <span class="match-badge badge-upcoming">À venir</span>
-      </div>
-      <div class="match-teams">
-        <div class="team"><span class="team-flag">🇮🇪</span><span class="team-name">Irlande</span></div>
-        <div class="vs-block"><span class="vs-text">vs</span></div>
-        <div class="team"><span class="team-flag">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span><span class="team-name">Écosse</span></div>
-      </div>
-      <div class="match-venue">Aviva Stadium, Dublin <span class="match-time">14h10</span></div>
-    </div>
-
-    <div class="match-card">
-      <div class="match-meta">
-        <span class="match-date">Sam 14 Mar 2026</span>
-        <span class="match-badge badge-upcoming">À venir</span>
-      </div>
-      <div class="match-teams">
-        <div class="team"><span class="team-flag">🏴󠁧󠁢󠁷󠁬󠁳󠁿</span><span class="team-name">Pays de Galles</span></div>
-        <div class="vs-block"><span class="vs-text">vs</span></div>
-        <div class="team"><span class="team-flag">🇮🇹</span><span class="team-name">Italie</span></div>
-      </div>
-      <div class="match-venue">Principality Stadium, Cardiff <span class="match-time">16h40</span></div>
-    </div>
-
-    <div class="match-card" style="border-color:rgba(232,184,75,0.3)">
-      <div class="match-meta">
-        <span class="match-date">Sam 14 Mar 2026 — FINALE</span>
-        <span class="match-badge badge-upcoming">À venir</span>
-      </div>
-      <div class="match-teams">
-        <div class="team"><span class="team-flag">🇫🇷</span><span class="team-name">France</span></div>
-        <div class="vs-block"><span class="vs-text">vs</span></div>
-        <div class="team"><span class="team-flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span><span class="team-name">Angleterre</span></div>
-      </div>
-      <div class="match-venue">Stade de France, Paris <span class="match-time">21h10</span></div>
-    </div>
-
-  </div>
-
-  <!-- CLASSEMENT -->
-  <div class="section" id="section-classement">
-    <div class="round-label" style="margin-top:0">Après 3 journées</div>
-
-    <div class="standings-table">
-      <div class="standings-header">
-        <div>#</div><div>Équipe</div><div>J</div><div>V</div><div>D</div><div>Dif</div><div>Ess</div><div>Pts</div>
-      </div>
-
-      <div class="standings-row" style="animation-delay:0.05s">
-        <div class="rank gold">1</div>
-        <div class="team-info"><span class="team-flag-sm">🇫🇷</span><span class="team-name-sm">France</span></div>
-        <div class="stat">3</div><div class="stat">3</div><div class="stat">0</div>
-        <div class="stat pd">+106</div>
-        <div class="stat">17</div>
-        <div class="stat pts">15</div>
-      </div>
-      <div class="standings-row" style="animation-delay:0.1s">
-        <div class="rank">2</div>
-        <div class="team-info"><span class="team-flag-sm">🇮🇪</span><span class="team-name-sm">Irlande</span></div>
-        <div class="stat">3</div><div class="stat">2</div><div class="stat">1</div>
-        <div class="stat pd">+39</div>
-        <div class="stat">12</div>
-        <div class="stat pts">10</div>
-      </div>
-      <div class="standings-row" style="animation-delay:0.15s">
-        <div class="rank">3</div>
-        <div class="team-info"><span class="team-flag-sm">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span><span class="team-name-sm">Angleterre</span></div>
-        <div class="stat">3</div><div class="stat">2</div><div class="stat">1</div>
-        <div class="stat pd">+16</div>
-        <div class="stat">10</div>
-        <div class="stat pts">9</div>
-      </div>
-      <div class="standings-row" style="animation-delay:0.2s">
-        <div class="rank">4</div>
-        <div class="team-info"><span class="team-flag-sm">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span><span class="team-name-sm">Écosse</span></div>
-        <div class="stat">3</div><div class="stat">2</div><div class="stat">1</div>
-        <div class="stat pd">+8</div>
-        <div class="stat">9</div>
-        <div class="stat pts">9</div>
-      </div>
-      <div class="standings-row" style="animation-delay:0.25s">
-        <div class="rank">5</div>
-        <div class="team-info"><span class="team-flag-sm">🏴󠁧󠁢󠁷󠁬󠁳󠁿</span><span class="team-name-sm">Pays de Galles</span></div>
-        <div class="stat">3</div><div class="stat">1</div><div class="stat">2</div>
-        <div class="stat pd neg">−88</div>
-        <div class="stat">5</div>
-        <div class="stat pts">5</div>
-      </div>
-      <div class="standings-row" style="animation-delay:0.3s">
-        <div class="rank">6</div>
-        <div class="team-info"><span class="team-flag-sm">🇮🇹</span><span class="team-name-sm">Italie</span></div>
-        <div class="stat">3</div><div class="stat">0</div><div class="stat">3</div>
-        <div class="stat pd neg">−81</div>
-        <div class="stat">4</div>
-        <div class="stat pts">1</div>
-      </div>
-    </div>
-
-    <div style="margin-top:12px; padding:12px; background:var(--surface); border-radius:var(--radius); border:1px solid var(--border); font-size:12px; color:var(--muted); line-height:1.7">
-      <strong style="color:var(--accent); font-family:'Barlow Condensed',sans-serif; font-size:13px; letter-spacing:1px">SYSTÈME DE POINTS</strong><br>
-      Victoire : <strong style="color:var(--text)">4 pts</strong> · Nul : <strong style="color:var(--text)">2 pts</strong><br>
-      Bonus offensif (4+ essais) : <strong style="color:var(--text)">+1 pt</strong><br>
-      Bonus défensif (défaite ≤7 pts) : <strong style="color:var(--text)">+1 pt</strong><br>
-      Grand Chelem : <strong style="color:var(--text)">+3 pts bonus</strong>
-    </div>
-  </div>
-
-  <!-- INFOS -->
-  <div class="section" id="section-infos">
-    <div class="info-banner">
-      <strong>📲 Comment installer cette app ?</strong><br>
-      Sur Android Chrome : appuyez sur le menu <strong>⋮</strong> en haut à droite, puis <strong>"Ajouter à l'écran d'accueil"</strong>. L'app apparaîtra comme une icône sur votre téléphone.
-    </div>
-
-    <div class="info-banner" style="margin-top:0">
-      <strong>🏆 Champion en titre</strong> : France (2025)<br>
-      <strong>📅 Période</strong> : 5 février — 14 mars 2026<br>
-      <strong>🎙️ Diffusion FR</strong> : France Télévisions, TF1
-    </div>
-
-    <div class="round-label" style="margin-top:8px">Les équipes</div>
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px">
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px;text-align:center">
-        <div style="font-size:36px">🇫🇷</div>
-        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;margin-top:6px">France</div>
-        <div style="font-size:11px;color:var(--muted)">Champions en titre</div>
-      </div>
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px;text-align:center">
-        <div style="font-size:36px">🇮🇪</div>
-        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;margin-top:6px">Irlande</div>
-        <div style="font-size:11px;color:var(--muted)">Triple Couronne 2025</div>
-      </div>
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px;text-align:center">
-        <div style="font-size:36px">🏴󠁧󠁢󠁥󠁮󠁧󠁿</div>
-        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;margin-top:6px">Angleterre</div>
-        <div style="font-size:11px;color:var(--muted)">Cap. Maro Itoje</div>
-      </div>
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px;text-align:center">
-        <div style="font-size:36px">🏴󠁧󠁢󠁳󠁣󠁴󠁿</div>
-        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;margin-top:6px">Écosse</div>
-        <div style="font-size:11px;color:var(--muted)">Calcutta Cup 2026 ✓</div>
-      </div>
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px;text-align:center">
-        <div style="font-size:36px">🇮🇹</div>
-        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;margin-top:6px">Italie</div>
-        <div style="font-size:11px;color:var(--muted)">Cap. P. Garbisi</div>
-      </div>
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px;text-align:center">
-        <div style="font-size:36px">🏴󠁧󠁢󠁷󠁬󠁳󠁿</div>
-        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;margin-top:6px">Pays de Galles</div>
-        <div style="font-size:11px;color:var(--muted)">L. Rees-Zammit de retour</div>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-<div class="footer">Données au 4 mars 2026 · Scores estimés à titre indicatif</div>
+<!-- Game iframe -->
+<iframe
+  id="game-frame"
+  src="https://pneubis.github.io/skyjo"
+  allow="fullscreen; notifications"
+  allowfullscreen
+></iframe>
 
 <script>
-function showSection(id, tab) {
-  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  document.getElementById('section-' + id).classList.add('active');
-  tab.classList.add('active');
+// ── MANIFEST inline ──────────────────────────────────────────────
+const manifest = {
+  name: "Skyjo Multijoueur",
+  short_name: "Skyjo",
+  description: "Jouez au Skyjo en ligne avec vos amis",
+  start_url: "./",
+  display: "standalone",
+  background_color: "#1a1035",
+  theme_color: "#1a1035",
+  orientation: "any",
+  icons: [
+    {
+      src: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIgMTkyIj48cmVjdCB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgcng9IjM4IiBmaWxsPSIjMWExMDM1Ii8+PHJlY3QgeD0iMjAiIHk9IjIwIiB3aWR0aD0iNjgiIGhlaWdodD0iOTYiIHJ4PSIxMiIgZmlsbD0iI2ZmZiIvPjxyZWN0IHg9IjEwNCIgeT0iMjAiIHdpZHRoPSI2OCIgaGVpZ2h0PSI5NiIgcng9IjEyIiBmaWxsPSIjZmY1ZDVkIi8+PHJlY3QgeD0iMjAiIHk9Ijc2IiB3aWR0aD0iNjgiIGhlaWdodD0iOTYiIHJ4PSIxMiIgZmlsbD0iIzVkYjVmZiIvPjxyZWN0IHg9IjEwNCIgeT0iNzYiIHdpZHRoPSI2OCIgaGVpZ2h0PSI5NiIgcng9IjEyIiBmaWxsPSIjNmRmZjkzIi8+PHRleHQgeD0iNTQiIHk9IjczIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSIgZm9udC13ZWlnaHQ9IjcwMCIgZm9udC1zaXplPSIzMiIgZmlsbD0iIzFhMTAzNSI+LTI8L3RleHQ+PHRleHQgeD0iMTM4IiB5PSI3MyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEiIGZvbnQtd2VpZ2h0PSI3MDAiIGZvbnQtc2l6ZT0iMzIiIGZpbGw9IndoaXRlIj44PC90ZXh0Pjx0ZXh0IHg9IjU0IiB5PSIxNjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjMyIiBmaWxsPSJ3aGl0ZSI+NTwvdGV4dD48dGV4dCB4PSIxMzgiIHk9IjE2MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEiIGZvbnQtd2VpZ2h0PSI3MDAiIGZvbnQtc2l6ZT0iMzIiIGZpbGw9IiMxYTEwMzUiPjA8L3RleHQ+PC9zdmc+",
+      sizes: "192x192",
+      type: "image/svg+xml",
+      purpose: "any maskable"
+    },
+    {
+      src: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjEwMCIgZmlsbD0iIzFhMTAzNSIvPjxyZWN0IHg9IjUwIiB5PSI1MCIgd2lkdGg9IjE4MCIgaGVpZ2h0PSIyNTYiIHJ4PSIyOCIgZmlsbD0iI2ZmZiIvPjxyZWN0IHg9IjI4MiIgeT0iNTAiIHdpZHRoPSIxODAiIGhlaWdodD0iMjU2IiByeD0iMjgiIGZpbGw9IiNmZjVkNWQiLz48cmVjdCB4PSI1MCIgeT0iMjA2IiB3aWR0aD0iMTgwIiBoZWlnaHQ9IjI1NiIgcng9IjI4IiBmaWxsPSIjNWRiNWZmIi8+PHJlY3QgeD0iMjgyIiB5PSIyMDYiIHdpZHRoPSIxODAiIGhlaWdodD0iMjU2IiByeD0iMjgiIGZpbGw9IiM2ZGZmOTMiLz48dGV4dCB4PSIxNDAiIHk9IjE5OCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEiIGZvbnQtd2VpZ2h0PSI3MDAiIGZvbnQtc2l6ZT0iOTYiIGZpbGw9IiMxYTEwMzUiPi0yPC90ZXh0Pjx0ZXh0IHg9IjM3MiIgeT0iMTk4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSIgZm9udC13ZWlnaHQ9IjcwMCIgZm9udC1zaXplPSI5NiIgZmlsbD0id2hpdGUiPjg8L3RleHQ+PHRleHQgeD0iMTQwIiB5PSI0MjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9Ijk2IiBmaWxsPSJ3aGl0ZSI+NTwvdGV4dD48dGV4dCB4PSIzNzIiIHk9IjQyMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEiIGZvbnQtd2VpZ2h0PSI3MDAiIGZvbnQtc2l6ZT0iOTYiIGZpbGw9IiMxYTEwMzUiPjA8L3RleHQ+PC9zdmc+",
+      sizes: "512x512",
+      type: "image/svg+xml",
+      purpose: "any maskable"
+    }
+  ]
+};
+const manifestBlob = new Blob([JSON.stringify(manifest)], { type: 'application/manifest+json' });
+document.getElementById('manifest-placeholder').href = URL.createObjectURL(manifestBlob);
+
+// ── SERVICE WORKER ───────────────────────────────────────────────
+if ('serviceWorker' in navigator) {
+  const sw = `
+    const CACHE = 'skyjo-pwa-v1';
+    self.addEventListener('install', e => self.skipWaiting());
+    self.addEventListener('activate', e => clients.claim());
+    self.addEventListener('fetch', e => {
+      e.respondWith(
+        fetch(e.request).catch(() => caches.match(e.request))
+      );
+    });
+  `;
+  const swBlob = new Blob([sw], { type: 'application/javascript' });
+  navigator.serviceWorker.register(URL.createObjectURL(swBlob)).catch(() => {});
 }
 
-// ── PWA Install Prompt ──────────────────────────────────────────────
-let deferredPrompt = null;
-const installBar = document.getElementById('pwaInstallBar');
-const installBtn = document.getElementById('pwaInstallBtn');
+// ── SPLASH → hide when iframe loaded ────────────────────────────
+const frame = document.getElementById('game-frame');
+const splash = document.getElementById('splash');
 
-// Intercept the browser's native install prompt (Chrome/Brave/Edge)
-window.addEventListener('beforeinstallprompt', (e) => {
+let splashHidden = false;
+function hideSplash() {
+  if (splashHidden) return;
+  splashHidden = true;
+  splash.classList.add('hidden');
+}
+
+frame.addEventListener('load', () => setTimeout(hideSplash, 600));
+setTimeout(hideSplash, 4000); // fallback
+
+// ── INSTALL PROMPT (Android/Brave/Chrome) ───────────────────────
+let deferredPrompt = null;
+const installBar = document.getElementById('install-bar');
+const installBtn = document.getElementById('install-btn');
+
+window.addEventListener('beforeinstallprompt', e => {
   e.preventDefault();
   deferredPrompt = e;
-  installBar.style.display = 'flex';   // show our custom green banner
+  setTimeout(() => {
+    installBar.style.display = 'flex';
+    // Shrink iframe so bar doesn't cover content
+    frame.style.height = 'calc(100% - 90px)';
+  }, 1500);
 });
 
 installBtn.addEventListener('click', async () => {
@@ -802,57 +322,48 @@ installBtn.addEventListener('click', async () => {
   deferredPrompt.prompt();
   const { outcome } = await deferredPrompt.userChoice;
   deferredPrompt = null;
-  installBar.style.display = 'none';
-  if (outcome === 'accepted') {
-    showToast('✅ App installée avec succès !');
-  }
+  dismissInstall();
+  if (outcome === 'accepted') showToast('🃏 Skyjo installé !');
 });
 
-// Hide banner once already installed
 window.addEventListener('appinstalled', () => {
-  installBar.style.display = 'none';
-  showToast('🏉 App 6 Nations installée !');
+  dismissInstall();
+  showToast('🎉 Skyjo ajouté à l\'écran d\'accueil !');
 });
 
-// ── Service Worker (required for PWA installability) ────────────────
-if ('serviceWorker' in navigator) {
-  const swCode = `
-    const CACHE = 'six-nations-v1';
-    self.addEventListener('install', e => {
-      self.skipWaiting();
-    });
-    self.addEventListener('fetch', e => {
-      e.respondWith(fetch(e.request).catch(() => caches.match(e.request)));
-    });
-  `;
-  const blob = new Blob([swCode], { type: 'application/javascript' });
-  const swUrl = URL.createObjectURL(blob);
-  navigator.serviceWorker.register(swUrl).catch(() => {});
+function dismissInstall() {
+  installBar.style.display = 'none';
+  frame.style.height = '100%';
 }
 
-// ── Toast helper ────────────────────────────────────────────────────
+// ── iOS detection ────────────────────────────────────────────────
+const isIos = /iphone|ipad|ipod/i.test(navigator.userAgent);
+const isInStandalone = window.navigator.standalone === true;
+if (isIos && !isInStandalone) {
+  setTimeout(() => {
+    document.getElementById('ios-bar').style.display = 'flex';
+    frame.style.height = 'calc(100% - 110px)';
+  }, 2000);
+}
+
+// ── Toast helper ─────────────────────────────────────────────────
 function showToast(msg) {
   const t = document.createElement('div');
   t.textContent = msg;
   Object.assign(t.style, {
-    position:'fixed', bottom:'24px', left:'50%', transform:'translateX(-50%)',
-    background:'#27ae60', color:'#fff', padding:'10px 20px',
-    borderRadius:'30px', fontFamily:"'Barlow Condensed',sans-serif",
-    fontWeight:'700', fontSize:'14px', zIndex:'9999',
-    boxShadow:'0 4px 20px rgba(0,0,0,0.4)', opacity:'1',
-    transition:'opacity 0.5s'
+    position: 'fixed', bottom: '100px', left: '50%',
+    transform: 'translateX(-50%)',
+    background: '#7c5cfc', color: '#fff',
+    padding: '12px 24px', borderRadius: '30px',
+    fontFamily: '-apple-system, sans-serif',
+    fontWeight: '700', fontSize: '14px',
+    zIndex: '9999', whiteSpace: 'nowrap',
+    boxShadow: '0 4px 24px rgba(124,92,252,0.5)',
+    transition: 'opacity 0.4s',
   });
   document.body.appendChild(t);
-  setTimeout(() => { t.style.opacity = '0'; setTimeout(() => t.remove(), 500); }, 2500);
+  setTimeout(() => { t.style.opacity = '0'; setTimeout(() => t.remove(), 400); }, 2500);
 }
-
-// ── Auto-scroll to next match ───────────────────────────────────────
-window.addEventListener('load', () => {
-  const nextCard = document.querySelector('.match-card.next-match');
-  if (nextCard) {
-    setTimeout(() => nextCard.scrollIntoView({ behavior: 'smooth', block: 'center' }), 600);
-  }
-});
 </script>
 </body>
 </html>
