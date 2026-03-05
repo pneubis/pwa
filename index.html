@@ -587,11 +587,6 @@ if (urlPage) {
 loadData();
 
 // Deeplink
-const urlPage = new URLSearchParams(window.location.search).get('page');
-if (urlPage) {
-  const nb = document.querySelector('.nav-btn[onclick*="' + urlPage + '"]');
-  if (nb) nb.click();
-}
 
 // ── PWA Install Banner ────────────────────────────────────
 let deferredPrompt = null;
