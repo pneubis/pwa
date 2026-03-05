@@ -232,7 +232,14 @@
         <p>Tournoi 2026 · Édition 132</p>
       </div>
     </div>
-    <div class="live-badge">LIVE</div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:3px">
+      <span id="last-update" style="font-size:9px;color:var(--muted)"></span>
+      <div style="display:flex;align-items:center;gap:8px"><div class="live-badge">LIVE</div>
+      <div id="refresh-btn" onclick="refreshApp()" title="Actualiser"
+        style="width:32px;height:32px;border-radius:8px;background:var(--surface);border:1px solid var(--border);
+               display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;
+               transition:transform .3s">🔄</div>
+    </div>
   </div>
 </div>
 
@@ -253,25 +260,12 @@
 
     <div class="leader-card">
       <div class="leader-label">🥇 Leader actuel</div>
-      <div class="leader-content">
-        <div class="leader-flag">🇮🇪</div>
-        <div>
-          <div class="leader-name">Irlande</div>
-          <div class="leader-pts">14 pts · 2V 0D · +52 pts</div>
-        </div>
-      </div>
+      <div class="leader-content" id="leader-info"><!-- chargement... --></div>
     </div>
 
     <div class="next-card">
       <div class="leader-label" style="color:var(--accent2)">⏭ Prochain match</div>
-      <div style="display:flex;align-items:center;gap:10px;margin-top:6px">
-        <span style="font-size:24px">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
-        <div style="flex:1">
-          <div style="font-weight:700;font-size:14px">Angleterre vs France</div>
-          <div style="font-size:11px;color:var(--muted)">Sam 7 mars · 16h45 · Twickenham</div>
-        </div>
-        <span style="font-size:24px">🇫🇷</span>
-      </div>
+      <div style="display:flex;align-items:center;gap:10px;margin-top:6px" id="next-match-info"><!-- chargement... --></div>
     </div>
 
     <!-- NOTIFICATIONS CARD -->
@@ -289,12 +283,7 @@
       <div class="section-title">Classement rapide</div>
       <div class="standings-card">
         <div class="standings-header"><div>#</div><div>Équipe</div><div>J</div><div>V</div><div>D</div><div>N</div><div>Pts</div></div>
-        <div class="standings-row"><div class="pos gold">1</div><div class="team-info"><span class="flag">🇮🇪</span><span class="team-name">Irlande</span></div><div class="stat">2</div><div class="stat">2</div><div class="stat">0</div><div class="stat">0</div><div class="pts">14</div></div>
-        <div class="standings-row"><div class="pos silver">2</div><div class="team-info"><span class="flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span><span class="team-name">Angleterre</span></div><div class="stat">2</div><div class="stat">2</div><div class="stat">0</div><div class="stat">0</div><div class="pts">10</div></div>
-        <div class="standings-row"><div class="pos bronze">3</div><div class="team-info"><span class="flag">🇫🇷</span><span class="team-name">France</span></div><div class="stat">2</div><div class="stat">1</div><div class="stat">1</div><div class="stat">0</div><div class="pts">9</div></div>
-        <div class="standings-row"><div class="pos">4</div><div class="team-info"><span class="flag">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span><span class="team-name">Écosse</span></div><div class="stat">2</div><div class="stat">1</div><div class="stat">1</div><div class="stat">0</div><div class="pts">5</div></div>
-        <div class="standings-row"><div class="pos">5</div><div class="team-info"><span class="flag">🏴󠁧󠁢󠁷󠁬󠁳󠁿</span><span class="team-name">Pays de Galles</span></div><div class="stat">2</div><div class="stat">0</div><div class="stat">2</div><div class="stat">0</div><div class="pts">2</div></div>
-        <div class="standings-row"><div class="pos">6</div><div class="team-info"><span class="flag">🇮🇹</span><span class="team-name">Italie</span></div><div class="stat">2</div><div class="stat">0</div><div class="stat">2</div><div class="stat">0</div><div class="pts">1</div></div>
+        <div id="standings-home"><!-- chargement... --></div>
       </div>
     </div>
     <div style="height:16px"></div>
@@ -306,49 +295,13 @@
       <div class="section-title">Classement général</div>
       <div class="standings-card">
         <div class="standings-header"><div>#</div><div>Équipe</div><div>J</div><div>V</div><div>D</div><div>N</div><div>Pts</div></div>
-        <div class="standings-row"><div class="pos gold">1</div><div class="team-info"><span class="flag">🇮🇪</span><span class="team-name">Irlande</span></div><div class="stat">2</div><div class="stat">2</div><div class="stat">0</div><div class="stat">0</div><div class="pts">14</div></div>
-        <div class="standings-row"><div class="pos silver">2</div><div class="team-info"><span class="flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span><span class="team-name">Angleterre</span></div><div class="stat">2</div><div class="stat">2</div><div class="stat">0</div><div class="stat">0</div><div class="pts">10</div></div>
-        <div class="standings-row"><div class="pos bronze">3</div><div class="team-info"><span class="flag">🇫🇷</span><span class="team-name">France</span></div><div class="stat">2</div><div class="stat">1</div><div class="stat">1</div><div class="stat">0</div><div class="pts">9</div></div>
-        <div class="standings-row"><div class="pos">4</div><div class="team-info"><span class="flag">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span><span class="team-name">Écosse</span></div><div class="stat">2</div><div class="stat">1</div><div class="stat">1</div><div class="stat">0</div><div class="pts">5</div></div>
-        <div class="standings-row"><div class="pos">5</div><div class="team-info"><span class="flag">🏴󠁧󠁢󠁷󠁬󠁳󠁿</span><span class="team-name">Pays de Galles</span></div><div class="stat">2</div><div class="stat">0</div><div class="stat">2</div><div class="stat">0</div><div class="pts">2</div></div>
-        <div class="standings-row"><div class="pos">6</div><div class="team-info"><span class="flag">🇮🇹</span><span class="team-name">Italie</span></div><div class="stat">2</div><div class="stat">0</div><div class="stat">2</div><div class="stat">0</div><div class="pts">1</div></div>
+        <div id="standings-home"><!-- chargement... --></div>
       </div>
     </div>
     <div class="section" style="margin-top:16px">
       <div class="section-title">Différence de points</div>
       <div class="standings-card">
-        <div style="padding:12px 14px">
-          <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border)">
-            <span style="font-size:18px">🇮🇪</span>
-            <div style="flex:1"><div style="height:8px;background:var(--surface);border-radius:4px;overflow:hidden"><div style="width:100%;height:100%;background:linear-gradient(90deg,var(--accent),#d4a835);border-radius:4px"></div></div></div>
-            <span style="font-family:'Black Han Sans',sans-serif;color:var(--accent);min-width:40px;text-align:right">+52</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border)">
-            <span style="font-size:18px">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
-            <div style="flex:1"><div style="height:8px;background:var(--surface);border-radius:4px;overflow:hidden"><div style="width:75%;height:100%;background:linear-gradient(90deg,#b0b0e0,#8080c0);border-radius:4px"></div></div></div>
-            <span style="font-family:'Black Han Sans',sans-serif;color:#b0b0e0;min-width:40px;text-align:right">+39</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border)">
-            <span style="font-size:18px">🇫🇷</span>
-            <div style="flex:1"><div style="height:8px;background:var(--surface);border-radius:4px;overflow:hidden"><div style="width:55%;height:100%;background:linear-gradient(90deg,#4a7fe8,#3060c0);border-radius:4px"></div></div></div>
-            <span style="font-family:'Black Han Sans',sans-serif;color:var(--accent2);min-width:40px;text-align:right">+14</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border)">
-            <span style="font-size:18px">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span>
-            <div style="flex:1"><div style="height:8px;background:var(--surface);border-radius:4px;overflow:hidden"><div style="width:30%;height:100%;background:linear-gradient(90deg,#6060a0,#404080);border-radius:4px"></div></div></div>
-            <span style="font-family:'Black Han Sans',sans-serif;color:var(--muted);min-width:40px;text-align:right">-3</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border)">
-            <span style="font-size:18px">🏴󠁧󠁢󠁷󠁬󠁳󠁿</span>
-            <div style="flex:1"><div style="height:8px;background:var(--surface);border-radius:4px;overflow:hidden"><div style="width:15%;height:100%;background:linear-gradient(90deg,var(--red),#c03030);border-radius:4px"></div></div></div>
-            <span style="font-family:'Black Han Sans',sans-serif;color:var(--red);min-width:40px;text-align:right">-48</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;padding:8px 0">
-            <span style="font-size:18px">🇮🇹</span>
-            <div style="flex:1"><div style="height:8px;background:var(--surface);border-radius:4px;overflow:hidden"><div style="width:8%;height:100%;background:linear-gradient(90deg,#c04040,#903030);border-radius:4px"></div></div></div>
-            <span style="font-family:'Black Han Sans',sans-serif;color:var(--red);min-width:40px;text-align:right">-54</span>
-          </div>
-        </div>
+        <div style="padding:12px 14px" id="diff-bars"><!-- chargement... --></div>
       </div>
     </div>
     <div style="height:16px"></div>
@@ -396,34 +349,110 @@
 </div>
 
 <script>
-// ── Données matchs ────────────────────────────────────────
-const matches = [
-  { round:1, status:'played',   date:'1 fév 2026',   time:'15h00', home:{flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',name:'Angleterre'},     away:{flag:'🇮🇪',name:'Irlande'},        score:{h:17,a:22}, venue:'Twickenham, Londres' },
-  { round:1, status:'played',   date:'1 fév 2026',   time:'17h15', home:{flag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿',name:'Écosse'},         away:{flag:'🇮🇹',name:'Italie'},         score:{h:31,a:13}, venue:'Murrayfield, Édimbourg' },
-  { round:1, status:'played',   date:'2 fév 2026',   time:'15h30', home:{flag:'🇫🇷',name:'France'},           away:{flag:'🏴󠁧󠁢󠁷󠁬󠁳󠁿',name:'Pays de Galles'}, score:{h:45,a:7},  venue:'Stade de France, Paris' },
-  { round:2, status:'played',   date:'8 fév 2026',   time:'15h00', home:{flag:'🇮🇪',name:'Irlande'},          away:{flag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿',name:'Écosse'},        score:{h:32,a:12}, venue:'Aviva Stadium, Dublin' },
-  { round:2, status:'played',   date:'8 fév 2026',   time:'17h15', home:{flag:'🏴󠁧󠁢󠁷󠁬󠁳󠁿',name:'Pays de Galles'}, away:{flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',name:'Angleterre'},  score:{h:10,a:33}, venue:'Principality Stadium, Cardiff' },
-  { round:2, status:'played',   date:'9 fév 2026',   time:'15h30', home:{flag:'🇮🇹',name:'Italie'},           away:{flag:'🇫🇷',name:'France'},          score:{h:17,a:24}, venue:'Olimpico, Rome' },
-  { round:3, status:'upcoming', date:'7 mars 2026',  time:'14h15', home:{flag:'🇮🇪',name:'Irlande'},          away:{flag:'🏴󠁧󠁢󠁷󠁬󠁳󠁿',name:'Pays de Galles'}, score:{h:null,a:null}, venue:'Aviva Stadium, Dublin' },
-  { round:3, status:'upcoming', date:'7 mars 2026',  time:'16h45', home:{flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',name:'Angleterre'},     away:{flag:'🇫🇷',name:'France'},          score:{h:null,a:null}, venue:'Twickenham, Londres' },
-  { round:3, status:'upcoming', date:'8 mars 2026',  time:'15h00', home:{flag:'🇮🇹',name:'Italie'},           away:{flag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿',name:'Écosse'},        score:{h:null,a:null}, venue:'Olimpico, Rome' },
-  { round:4, status:'upcoming', date:'14 mars 2026', time:'14h15', home:{flag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿',name:'Écosse'},         away:{flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',name:'Angleterre'},  score:{h:null,a:null}, venue:'Murrayfield, Édimbourg' },
-  { round:4, status:'upcoming', date:'14 mars 2026', time:'16h45', home:{flag:'🏴󠁧󠁢󠁷󠁬󠁳󠁿',name:'Pays de Galles'}, away:{flag:'🇮🇹',name:'Italie'},         score:{h:null,a:null}, venue:'Principality Stadium, Cardiff' },
-  { round:4, status:'upcoming', date:'15 mars 2026', time:'15h30', home:{flag:'🇫🇷',name:'France'},           away:{flag:'🇮🇪',name:'Irlande'},        score:{h:null,a:null}, venue:'Stade de France, Paris' },
-  { round:5, status:'upcoming', date:'21 mars 2026', time:'14h00', home:{flag:'🏴󠁧󠁢󠁷󠁬󠁳󠁿',name:'Pays de Galles'}, away:{flag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿',name:'Écosse'},        score:{h:null,a:null}, venue:'Principality Stadium, Cardiff' },
-  { round:5, status:'upcoming', date:'21 mars 2026', time:'15h45', home:{flag:'🇮🇹',name:'Italie'},           away:{flag:'🇮🇪',name:'Irlande'},        score:{h:null,a:null}, venue:'Olimpico, Rome' },
-  { round:5, status:'upcoming', date:'21 mars 2026', time:'17h45', home:{flag:'🇫🇷',name:'France'},           away:{flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',name:'Angleterre'},  score:{h:null,a:null}, venue:'Stade de France, Paris' },
+// ── Données dynamiques depuis data.json ──────────────────
+let matches = [];
+let standings = [];
+let meta = {};
+
+const FALLBACK_MATCHES = [
+  { round:1, status:'played',   date:'5 fév 2026',   time:'21h10', home:{flag:'🇫🇷',name:'France'},           away:{flag:'🇮🇪',name:'Irlande'},        home_score:36, away_score:14, venue:'Stade de France, Paris' },
+  { round:1, status:'played',   date:'7 fév 2026',   time:'15h00', home:{flag:'🇮🇹',name:'Italie'},           away:{flag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿',name:'Écosse'},        home_score:17, away_score:24, venue:'Olimpico, Rome' },
+  { round:1, status:'played',   date:'7 fév 2026',   time:'17h15', home:{flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',name:'Angleterre'},     away:{flag:'🏴󠁧󠁢󠁷󠁬󠁳󠁿',name:'Pays de Galles'}, home_score:40, away_score:0,  venue:'Twickenham, Londres' },
+  { round:2, status:'played',   date:'14 fév 2026',  time:'15h00', home:{flag:'🇮🇪',name:'Irlande'},          away:{flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',name:'Angleterre'},  home_score:22, away_score:30, venue:'Aviva Stadium, Dublin' },
+  { round:2, status:'played',   date:'14 fév 2026',  time:'17h15', home:{flag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿',name:'Écosse'},         away:{flag:'🏴󠁧󠁢󠁷󠁬󠁳󠁿',name:'Pays de Galles'}, home_score:35, away_score:7,  venue:'Murrayfield, Édimbourg' },
+  { round:2, status:'played',   date:'15 fév 2026',  time:'15h30', home:{flag:'🇫🇷',name:'France'},           away:{flag:'🇮🇹',name:'Italie'},          home_score:44, away_score:14, venue:'Stade de France, Paris' },
+  { round:3, status:'played',   date:'21 fév 2026',  time:'15h00', home:{flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',name:'Angleterre'},     away:{flag:'🇮🇪',name:'Irlande'},        home_score:21, away_score:42, venue:'Allianz Stadium, Londres' },
+  { round:3, status:'played',   date:'21 fév 2026',  time:'17h15', home:{flag:'🏴󠁧󠁢󠁷󠁬󠁳󠁿',name:'Pays de Galles'}, away:{flag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿',name:'Écosse'},        home_score:3,  away_score:26, venue:'Principality Stadium, Cardiff' },
+  { round:3, status:'played',   date:'22 fév 2026',  time:'15h30', home:{flag:'🇫🇷',name:'France'},           away:{flag:'🇮🇹',name:'Italie'},          home_score:33, away_score:8,  venue:'Stade de France, Paris' },
+  { round:4, status:'upcoming', date:'6 mars 2026',  time:'15h00', home:{flag:'🇮🇪',name:'Irlande'},          away:{flag:'🏴󠁧󠁢󠁷󠁬󠁳󠁿',name:'Pays de Galles'}, home_score:null, away_score:null, venue:'Aviva Stadium, Dublin' },
+  { round:4, status:'upcoming', date:'6 mars 2026',  time:'17h15', home:{flag:'🇮🇹',name:'Italie'},           away:{flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',name:'Angleterre'},  home_score:null, away_score:null, venue:'Olimpico, Rome' },
+  { round:4, status:'upcoming', date:'7 mars 2026',  time:'15h30', home:{flag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿',name:'Écosse'},         away:{flag:'🇫🇷',name:'France'},          home_score:null, away_score:null, venue:'Murrayfield, Édimbourg' },
+  { round:5, status:'upcoming', date:'14 mars 2026', time:'14h00', home:{flag:'🏴󠁧󠁢󠁷󠁬󠁳󠁿',name:'Pays de Galles'}, away:{flag:'🇮🇹',name:'Italie'},          home_score:null, away_score:null, venue:'Principality Stadium, Cardiff' },
+  { round:5, status:'upcoming', date:'14 mars 2026', time:'15h45', home:{flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',name:'Angleterre'},     away:{flag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿',name:'Écosse'},        home_score:null, away_score:null, venue:'Twickenham, Londres' },
+  { round:5, status:'upcoming', date:'14 mars 2026', time:'17h45', home:{flag:'🇫🇷',name:'France'},           away:{flag:'🇮🇪',name:'Irlande'},        home_score:null, away_score:null, venue:'Stade de France, Paris' },
 ];
+
+const FALLBACK_STANDINGS = [
+  { rank:1, name_fr:'France',         flag:'🇫🇷', played:3, won:3, lost:0, drawn:0, points_diff:89,  points:15 },
+  { rank:2, name_fr:'Angleterre',     flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', played:3, won:2, lost:1, drawn:0, points_diff:42,  points:10 },
+  { rank:3, name_fr:'Écosse',         flag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿', played:3, won:2, lost:1, drawn:0, points_diff:20,  points:9  },
+  { rank:4, name_fr:'Irlande',        flag:'🇮🇪', played:3, won:1, lost:2, drawn:0, points_diff:-11, points:5  },
+  { rank:5, name_fr:'Italie',         flag:'🇮🇹', played:3, won:0, lost:3, drawn:0, points_diff:-63, points:1  },
+  { rank:6, name_fr:'Pays de Galles', flag:'🏴󠁧󠁢󠁷󠁬󠁳󠁿', played:3, won:0, lost:3, drawn:0, points_diff:-77, points:0  },
+];
+
+function applyData(data) {
+  // Normaliser les matchs depuis l'API
+  if (data.matches && data.matches.length > 0) {
+    matches = data.matches.map(m => ({
+      round: parseInt((m.round || 'Round 1').replace(/\D/g, '')) || 1,
+      status: m.status,
+      date: m.date,
+      time: m.time,
+      home: m.home,
+      away: m.away,
+      home_score: m.home_score,
+      away_score: m.away_score,
+      venue: m.venue
+    }));
+  } else {
+    matches = FALLBACK_MATCHES;
+  }
+
+  if (data.standings && data.standings.length > 0) {
+    standings = data.standings;
+  } else {
+    standings = FALLBACK_STANDINGS;
+  }
+
+  meta = data.meta || {};
+  renderAll();
+  updateTimestamp(data.updated_at);
+}
+
+function updateTimestamp(ts) {
+  const el = document.getElementById('last-update');
+  if (!el || !ts) return;
+  const d = new Date(ts);
+  el.textContent = 'Mis à jour ' + d.toLocaleTimeString('fr-FR', {hour:'2-digit', minute:'2-digit'});
+}
+
+async function loadData() {
+  const btn = document.getElementById('refresh-btn');
+  if (btn) { btn.style.transform='rotate(360deg)'; btn.style.transition='transform .6s ease'; }
+
+  try {
+    const r = await fetch('data.json?t=' + Date.now());
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const data = await r.json();
+    applyData(data);
+    // Reset rotation
+    setTimeout(() => { if (btn) { btn.style.transition='none'; btn.style.transform='rotate(0deg)'; }}, 700);
+  } catch(e) {
+    console.warn('data.json non disponible, utilisation des données statiques:', e.message);
+    applyData({ matches: FALLBACK_MATCHES, standings: FALLBACK_STANDINGS, updated_at: null });
+    setTimeout(() => { if (btn) { btn.style.transition='none'; btn.style.transform='rotate(0deg)'; }}, 700);
+  }
+}
+
+function renderAll() {
+  renderMatches('all');
+  renderStandings();
+  renderLeader();
+  renderNextMatch();
+  renderDiffBars();
+}
 
 function getWinner(m) {
   if (m.status !== 'played') return null;
-  if (m.score.h > m.score.a) return 'home';
-  if (m.score.a > m.score.h) return 'away';
+  if (m.home_score > m.away_score) return 'home';
+  if (m.away_score > m.home_score) return 'away';
   return 'draw';
 }
 
 function renderMatches(filter) {
   const list = document.getElementById('matches-list');
+  if (!list) return;
   const filtered = filter === 'all' ? matches : matches.filter(m => m.round == filter);
   if (!filtered.length) { list.innerHTML = '<div class="empty">Aucun match</div>'; return; }
   let html = '', lastRound = null;
@@ -436,7 +465,7 @@ function renderMatches(filter) {
     const hC = w==='home'?'win':w==='away'?'lose':'';
     const aC = w==='away'?'win':w==='home'?'lose':'';
     const scoreHtml = m.status === 'played'
-      ? `<div class="score-box"><div class="score ${hC}">${m.score.h}</div><div class="score-sep">–</div><div class="score ${aC}">${m.score.a}</div></div>`
+      ? `<div class="score-box"><div class="score ${hC}">${m.home_score}</div><div class="score-sep">–</div><div class="score ${aC}">${m.away_score}</div></div>`
       : `<div class="score-box"><div class="score-tbd">vs</div></div>`;
     html += `<div class="match-card ${m.status}">
       <div class="match-meta">
@@ -444,14 +473,84 @@ function renderMatches(filter) {
         <span class="match-date">${m.date} · ${m.time}</span>
       </div>
       <div class="match-teams">
-        <div class="match-team home"><div class="match-flag">${m.home.flag}</div><div class="match-name">${m.home.name}</div></div>
+        <div class="match-team home"><div class="match-flag">${m.home.flag}</div><div class="match-name">${m.home.name_fr||m.home.name}</div></div>
         ${scoreHtml}
-        <div class="match-team away"><div class="match-flag">${m.away.flag}</div><div class="match-name">${m.away.name}</div></div>
+        <div class="match-team away"><div class="match-flag">${m.away.flag}</div><div class="match-name">${m.away.name_fr||m.away.name}</div></div>
       </div>
       <div class="match-venue">📍 ${m.venue}</div>
     </div>`;
   });
   list.innerHTML = html;
+}
+
+function renderStandings() {
+  const el = document.getElementById('standings-home');
+  if (!el) return;
+  const posClass = ['gold','silver','bronze'];
+  el.innerHTML = standings.map((s,i) => `
+    <div class="standings-row">
+      <div class="pos ${posClass[i]||''}">${s.rank}</div>
+      <div class="team-info"><span class="flag">${s.flag}</span><span class="team-name">${s.name_fr||s.name}</span></div>
+      <div class="stat">${s.played}</div>
+      <div class="stat">${s.won}</div>
+      <div class="stat">${s.lost}</div>
+      <div class="stat">${s.drawn||0}</div>
+      <div class="pts">${s.points}</div>
+    </div>`).join('');
+}
+
+
+
+function renderLeader() {
+  const leader = standings[0];
+  if (!leader) return;
+  const el = document.getElementById('leader-info');
+  if (el) el.innerHTML = `
+    <div class="leader-flag">${leader.flag}</div>
+    <div>
+      <div class="leader-name">${leader.name_fr||leader.name}</div>
+      <div class="leader-pts">${leader.points} pts · ${leader.won}V ${leader.lost}D · ${leader.points_diff >= 0 ? '+' : ''}${leader.points_diff||0} pts</div>
+    </div>`;
+}
+
+function renderNextMatch() {
+  const next = matches.find(m => m.status === 'upcoming');
+  if (!next) return;
+  const el = document.getElementById('next-match-info');
+  if (el) el.innerHTML = `
+    <span style="font-size:24px">${next.home.flag}</span>
+    <div style="flex:1">
+      <div style="font-weight:700;font-size:14px">${next.home.name_fr||next.home.name} vs ${next.away.name_fr||next.away.name}</div>
+      <div style="font-size:11px;color:var(--muted)">${next.date} · ${next.time} · ${next.venue}</div>
+    </div>
+    <span style="font-size:24px">${next.away.flag}</span>`;
+}
+
+function renderDiffBars() {
+  const el = document.getElementById('diff-bars');
+  if (!el || !standings.length) return;
+  const maxDiff = Math.max(...standings.map(s => Math.abs(s.points_diff||0)), 1);
+  const colors = [
+    'linear-gradient(90deg,var(--accent),#d4a835)',
+    'linear-gradient(90deg,#b0b0e0,#8080c0)',
+    'linear-gradient(90deg,#4a7fe8,#3060c0)',
+    'linear-gradient(90deg,#6060a0,#404080)',
+    'linear-gradient(90deg,var(--red),#c03030)',
+    'linear-gradient(90deg,#c04040,#903030)',
+  ];
+  el.innerHTML = standings.map((s,i) => {
+    const diff = s.points_diff || 0;
+    const pct = Math.max(5, Math.round(Math.abs(diff) / maxDiff * 100));
+    const color = diff >= 0 ? (colors[i] || colors[4]) : colors[4];
+    const textColor = diff >= 0 ? (i===0?'var(--accent)':i===1?'#b0b0e0':'var(--accent2)') : 'var(--red)';
+    return `<div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:${i<5?'1px solid var(--border)':'none'}">
+      <span style="font-size:18px">${s.flag}</span>
+      <div style="flex:1"><div style="height:8px;background:var(--surface);border-radius:4px;overflow:hidden">
+        <div style="width:${pct}%;height:100%;background:${color};border-radius:4px"></div>
+      </div></div>
+      <span style="font-family:'Black Han Sans',sans-serif;color:${textColor};min-width:44px;text-align:right">${diff>=0?'+':''}${diff}</span>
+    </div>`;
+  }).join('');
 }
 
 function filterRound(round, btn) {
@@ -467,7 +566,25 @@ function showPage(name, btn) {
   btn.classList.add('active');
 }
 
-renderMatches('all');
+async function refreshApp() {
+  const btn = document.getElementById('refresh-btn');
+  if (btn) { btn.style.transform='rotate(0deg)'; btn.style.transition='none'; }
+  if ('caches' in window) {
+    const keys = await caches.keys();
+    await Promise.all(keys.map(k => caches.delete(k)));
+  }
+  await loadData();
+}
+
+// Deeplink
+const urlPage = new URLSearchParams(window.location.search).get('page');
+if (urlPage) {
+  const nb = document.querySelector('.nav-btn[onclick*="' + urlPage + '"]');
+  if (nb) nb.click();
+}
+
+// Charger les données au démarrage
+loadData();
 
 // Deeplink
 const urlPage = new URLSearchParams(window.location.search).get('page');
@@ -550,27 +667,35 @@ async function requestNotifPermission() {
 }
 
 async function sendTestNotif() {
-  // Attendre que le SW soit actif si ce n'est pas encore le cas
-  if (!swRegistration) {
-    console.warn('SW non enregistré');
-    return;
+  try {
+    // Toujours passer par registration.showNotification() — requis sur Android
+    const reg = await navigator.serviceWorker.ready;
+    await reg.showNotification('🏉 6 Nations 2026', {
+      body: 'Les notifications fonctionnent ! Vous serez alerté 15 min avant chaque match.',
+      icon: 'icon-192.png',
+      badge: 'icon-192.png',
+      tag: 'test',
+      vibrate: [200, 100, 200],
+      data: { url: '/' }
+    });
+  } catch(e) {
+    console.error('Notif test fail:', e);
+    document.getElementById('notif-status').textContent = 'Erreur : ' + e.message;
   }
-  // Forcer l'attente du SW actif
-  await navigator.serviceWorker.ready;
-  const sw = navigator.serviceWorker.controller;
-  if (sw) {
-    sw.postMessage({ type: 'TEST_NOTIFICATION' });
-  } else {
-    // Fallback : notification directe si le SW ne contrôle pas encore la page
-    if (Notification.permission === 'granted') {
-      new Notification('🏉 6 Nations 2026', {
-        body: 'Les notifications fonctionnent ! Vous serez alerté 15min avant chaque match.',
-        icon: 'icon-192.png',
-        tag: 'test',
-        vibrate: [200, 100, 200]
-      });
-    }
+}
+
+// ── Refresh ───────────────────────────────────────────────
+async function refreshApp() {
+  const btn = document.getElementById('refresh-btn');
+  btn.style.transform = 'rotate(360deg)';
+  btn.style.transition = 'transform .6s ease';
+
+  // Vider le cache SW puis recharger
+  if ('caches' in window) {
+    const keys = await caches.keys();
+    await Promise.all(keys.map(k => caches.delete(k)));
   }
+  setTimeout(() => location.reload(true), 400);
 }
 
 window.addEventListener('load', initSW);

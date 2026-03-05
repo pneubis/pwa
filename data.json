@@ -1,0 +1,33 @@
+{
+  "updated_at": "2026-03-05T19:00:00Z",
+  "standings": [
+    {"rank":1,"name":"France",        "name_fr":"France",         "flag":"🇫🇷", "played":3,"won":3,"lost":0,"drawn":0,"points_diff":89,  "points_for":123,"points_against":34, "tries_bonus":3,"losing_bonus":0,"points":15},
+    {"rank":2,"name":"England",       "name_fr":"Angleterre",     "flag":"🏴󠁧󠁢󠁥󠁮󠁧󠁿","played":3,"won":2,"lost":1,"drawn":0,"points_diff":42,  "points_for":101,"points_against":59, "tries_bonus":2,"losing_bonus":0,"points":10},
+    {"rank":3,"name":"Scotland",      "name_fr":"Écosse",         "flag":"🏴󠁧󠁢󠁳󠁣󠁴󠁿","played":3,"won":2,"lost":1,"drawn":0,"points_diff":20,  "points_for":85, "points_against":65, "tries_bonus":1,"losing_bonus":1,"points":9},
+    {"rank":4,"name":"Ireland",       "name_fr":"Irlande",        "flag":"🇮🇪", "played":3,"won":1,"lost":2,"drawn":0,"points_diff":-11, "points_for":78, "points_against":89, "tries_bonus":1,"losing_bonus":1,"points":5},
+    {"rank":5,"name":"Italy",         "name_fr":"Italie",         "flag":"🇮🇹", "played":3,"won":0,"lost":3,"drawn":0,"points_diff":-63, "points_for":39, "points_against":102,"tries_bonus":0,"losing_bonus":1,"points":1},
+    {"rank":6,"name":"Wales",         "name_fr":"Pays de Galles", "flag":"🏴󠁧󠁢󠁷󠁬󠁳󠁿","played":3,"won":0,"lost":3,"drawn":0,"points_diff":-77, "points_for":10, "points_against":87, "tries_bonus":0,"losing_bonus":0,"points":0}
+  ],
+  "matches": [
+    {"round":"Round 1","status":"played",  "date":"5 fév 2026",  "time":"21h10","home":{"name":"France",  "name_fr":"France",         "flag":"🇫🇷"},"away":{"name":"Ireland","name_fr":"Irlande",       "flag":"🇮🇪"},"home_score":36,"away_score":14,"venue":"Stade de France, Paris"},
+    {"round":"Round 1","status":"played",  "date":"7 fév 2026",  "time":"15h00","home":{"name":"Italy",   "name_fr":"Italie",          "flag":"🇮🇹"},"away":{"name":"Scotland","name_fr":"Écosse",       "flag":"🏴󠁧󠁢󠁳󠁣󠁴󠁿"},"home_score":17,"away_score":24,"venue":"Olimpico, Rome"},
+    {"round":"Round 1","status":"played",  "date":"7 fév 2026",  "time":"17h15","home":{"name":"England", "name_fr":"Angleterre",      "flag":"🏴󠁧󠁢󠁥󠁮󠁧󠁿"},"away":{"name":"Wales",   "name_fr":"Pays de Galles","flag":"🏴󠁧󠁢󠁷󠁬󠁳󠁿"},"home_score":40,"away_score":0, "venue":"Twickenham, Londres"},
+    {"round":"Round 2","status":"played",  "date":"14 fév 2026", "time":"15h00","home":{"name":"Ireland", "name_fr":"Irlande",         "flag":"🇮🇪"},"away":{"name":"England","name_fr":"Angleterre",    "flag":"🏴󠁧󠁢󠁥󠁮󠁧󠁿"},"home_score":22,"away_score":30,"venue":"Aviva Stadium, Dublin"},
+    {"round":"Round 2","status":"played",  "date":"14 fév 2026", "time":"17h15","home":{"name":"Scotland","name_fr":"Écosse",          "flag":"🏴󠁧󠁢󠁳󠁣󠁴󠁿"},"away":{"name":"Wales",   "name_fr":"Pays de Galles","flag":"🏴󠁧󠁢󠁷󠁬󠁳󠁿"},"home_score":35,"away_score":7, "venue":"Murrayfield, Édimbourg"},
+    {"round":"Round 2","status":"played",  "date":"15 fév 2026", "time":"15h30","home":{"name":"France",  "name_fr":"France",          "flag":"🇫🇷"},"away":{"name":"Italy",  "name_fr":"Italie",         "flag":"🇮🇹"},"home_score":44,"away_score":14,"venue":"Stade de France, Paris"},
+    {"round":"Round 3","status":"played",  "date":"21 fév 2026", "time":"15h00","home":{"name":"England", "name_fr":"Angleterre",      "flag":"🏴󠁧󠁢󠁥󠁮󠁧󠁿"},"away":{"name":"Ireland","name_fr":"Irlande",        "flag":"🇮🇪"},"home_score":21,"away_score":42,"venue":"Allianz Stadium, Londres"},
+    {"round":"Round 3","status":"played",  "date":"21 fév 2026", "time":"17h15","home":{"name":"Wales",   "name_fr":"Pays de Galles",  "flag":"🏴󠁧󠁢󠁷󠁬󠁳󠁿"},"away":{"name":"Scotland","name_fr":"Écosse",       "flag":"🏴󠁧󠁢󠁳󠁣󠁴󠁿"},"home_score":3, "away_score":26,"venue":"Principality Stadium, Cardiff"},
+    {"round":"Round 3","status":"played",  "date":"22 fév 2026", "time":"15h30","home":{"name":"France",  "name_fr":"France",          "flag":"🇫🇷"},"away":{"name":"Italy",  "name_fr":"Italie",         "flag":"🇮🇹"},"home_score":33,"away_score":8, "venue":"Stade de France, Paris"},
+    {"round":"Round 4","status":"upcoming","date":"6 mars 2026", "time":"15h00","home":{"name":"Ireland", "name_fr":"Irlande",         "flag":"🇮🇪"},"away":{"name":"Wales",   "name_fr":"Pays de Galles","flag":"🏴󠁧󠁢󠁷󠁬󠁳󠁿"},"home_score":null,"away_score":null,"venue":"Aviva Stadium, Dublin"},
+    {"round":"Round 4","status":"upcoming","date":"6 mars 2026", "time":"17h15","home":{"name":"Italy",   "name_fr":"Italie",          "flag":"🇮🇹"},"away":{"name":"England","name_fr":"Angleterre",    "flag":"🏴󠁧󠁢󠁥󠁮󠁧󠁿"},"home_score":null,"away_score":null,"venue":"Olimpico, Rome"},
+    {"round":"Round 4","status":"upcoming","date":"7 mars 2026", "time":"15h30","home":{"name":"Scotland","name_fr":"Écosse",          "flag":"🏴󠁧󠁢󠁳󠁣󠁴󠁿"},"away":{"name":"France", "name_fr":"France",         "flag":"🇫🇷"},"home_score":null,"away_score":null,"venue":"Murrayfield, Édimbourg"},
+    {"round":"Round 5","status":"upcoming","date":"14 mars 2026","time":"14h00","home":{"name":"Wales",   "name_fr":"Pays de Galles",  "flag":"🏴󠁧󠁢󠁷󠁬󠁳󠁿"},"away":{"name":"Italy",  "name_fr":"Italie",         "flag":"🇮🇹"},"home_score":null,"away_score":null,"venue":"Principality Stadium, Cardiff"},
+    {"round":"Round 5","status":"upcoming","date":"14 mars 2026","time":"15h45","home":{"name":"England", "name_fr":"Angleterre",      "flag":"🏴󠁧󠁢󠁥󠁮󠁧󠁿"},"away":{"name":"Scotland","name_fr":"Écosse",       "flag":"🏴󠁧󠁢󠁳󠁣󠁴󠁿"},"home_score":null,"away_score":null,"venue":"Twickenham, Londres"},
+    {"round":"Round 5","status":"upcoming","date":"14 mars 2026","time":"17h45","home":{"name":"France",  "name_fr":"France",          "flag":"🇫🇷"},"away":{"name":"Ireland","name_fr":"Irlande",        "flag":"🇮🇪"},"home_score":null,"away_score":null,"venue":"Stade de France, Paris"}
+  ],
+  "meta": {
+    "current_round": 4,
+    "total_matches": 15,
+    "played": 9
+  }
+}
