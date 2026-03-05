@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>6 Nations 2026</title>
+<meta name="theme-color" content="#0a0a0f">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="6 Nations">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAGlElEQVR4nO3dvW5kRRCG4QIRbYIs2RIBF0KwMQERd4S4IyIC4g24EAKkXWlFsikE0OJgPJ7+qaqu6nqfFMk7Yr7XfcYzxxYBAAAAAAAAAAAADvTZ7gcw482bL//c/Rjwsk+f/ki1qfAPlrHnFzmKkA+M0Z8rWgyhHgzDryNKCCEeBMOva3cIW/9xho9mVwhb/lGGj1u8Q/jc8x8TYfx4nfc+3Gpj+BjlcRq4nACMHzM8dmMeAOPHCuv9mAbA+KHBckdmATB+aLLak0kAjB8WLHalHgDjhyXtfakGwPjhQXNnagEwfnjS2ptKAIwfO2js7guNB4L/+vH7r82+9g8//Wb2tStafqu52nd/y3FrqRbJykcmlgI4efwZhj7q5DBmIyCAf5w4+HtOCsI9gOzjrzj4e7IHMRNBmQAY/LhsQbgFkGX8jF5PlhhGIzguAEZvL3IM5gFEHX+04T89Pqh/zfcfPqp/zRVRQxiJIHUAO0dvMfBVOwOJFINZAFHG7z38iGPv5R1FlBB6I0gVgMfwM4+9l0cUu0M4KgDr4VcY/S3WMewKQT2AHeO3HH7l0d9iGcOOEHoiCBmA1fAZfT+rGDxDSBmA9vgZ/TrtGLwiSBUAw48vWwhpAtAcP8O3pxmCZQRqAViNn+HnliGEexFsC0Br/Ax/P60QLCIIGYDG+Bl+PBohaEcQKgCGX0OkEMIEwPj/9fbbtzf/27tf3jk+EjtRIrgXgMvfB1gd/9PjwzHjr0LjOfP47Jd5ABrjR17RIzANgPFDJHYEZgEwflxFjcAkgJUHy/X+uVafW4sI1ANYHT/OFykC1QAYP3pFicD9D2W/hPHXFOF5VwtgtsoI/xOwz+zzr3UKqATA+LFiZwTLAUT7hVSoZXV/214D8N0fV7v2sBQAlz7QtONSyP0EYPx4jfc+pgPg2h+RzO7R9QTguz96eO5k6oYYrv3/9tqNLd5OuZGmmb2h5vlNNCFuiBE5b/yw5bWX4QC49kdko/t0+Uvxp373n73sqHBPsIanxwfz314d4sNwwC5DAcxc/pz63R8+ZvYzslNOAJRGACiNAFBadwBc/2MXy9cBnAAojQBQGgGgNJd3gk9l8WG42a/JO8hzOAFQGgGgNC6BFvBhuPw4AVAaAaA0AkBp3QHM/MEy65sZUMPMjnr3ygmA0ggApREAShsKgNcB8GZ5/S/CCYDiXN4Jfv/h45E3x/BhOFseVw/DJ8DMZRDgZXSfbpdAvBbACK+9TP1yXBHuEV7Bh+Hu03rxG+aX44pwCqCP506mA+C1ACKZ3aP7j0E5BfAa730sBTBbHRHgJVp/FGPEtjfCiABXu/awHACvBbDT6v5UTgAuhbBix6VPo3YJRASYsXP8IkE+DEcENUV43lUDWKkywv8M+Fl5vjVfd6qfAESAe6KMX8ToEmg1AkI40+pza/ETR7PXAKsPlgjOsvp8Wv243fRFMBFAJO74RRx+CkQEtUUev4jTj0E1IiCEXDSeM49PGUzfEDNj5iaa57ipJj6Nb1Za4793Q4xrAA0hnCnS8JuQAYjoRCBCCBFoXZ5aXPKEDUBELwIRQthB83WZ1fV+6AAaQsglw/CbFAGI6EYgQggWtH8S5/FTnjQBNIQQT8bhN+kCENGPoCGGflbvu3jfQZgygMYqBBFieInlm427bp1NHUBjGYJI7Ris32Hffc/4EQE01iGI1IjB42Mlu4ffHBVA4xHCVeYovD9DFWX4zZEBNN4hXEWMYucHBqMNvzk6gKudMbzEIpBon4iNOvqrMgE00UI4UYbhN+UCuCIGPZlGf1U6gCtiGJd19FcEcANB/N8Jg3+OADpVDOLEwT9HAJNODKLC4J8jAGUZwqg49FsIYAPLSBj3GAJAaaH+TCoQDQGgNAJAaQSA0ggApREASiMAlEYAKI0AUBoBoDQCQGkEgNIIAKV1BXDvE3VARD275QRAaQSA0ggApREASusOgBfCyKR3r5wAKI0AUNpQAFwGIYORnXICoLThADgFENnoPjkBUNpUAJwCiGhml5wAKG06AE4BRDK7R04AlLYUAKcAIljZ4fIJQATYaXV/XAKhNJUAOAWwg8bupr/A779+x1+NQShfffOzz/sAjB8RzexyqBiGjyx6TwNeBKO07gD47o9MevfaFQDjR0Y9u+USCKURAEojAJRGACiNAFBaVwAzbzEDu/XstvsEIAJkwjvBQIep7+q8MYaoRq9Upk4ALocQEbsEAAAAAAAAAABXfwEzxyWgyjp/EAAAAABJRU5ErkJggg==">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script>
+// ── Inline Manifest ──────────────────────────────────────
+const ICON192 = "data:image/png;base64,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";
+const ICON512 = "data:image/png;base64,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";
+const manifest = {
+  name: "6 Nations Rugby 2026",
+  short_name: "6 Nations",
+  description: "Scores, classements et matchs du Tournoi des 6 Nations 2026",
+  start_url: "./",
+  display: "fullscreen",
+  orientation: "portrait",
+  background_color: "#0a0a0f",
+  theme_color: "#0a0a0f",
+  lang: "fr",
+  icons: [
+    { src: ICON192, sizes: "192x192", type: "image/png", purpose: "any maskable" },
+    { src: ICON512, sizes: "512x512", type: "image/png", purpose: "any maskable" }
+  ]
+};
+const blob = new Blob([JSON.stringify(manifest)], {type: 'application/json'});
+const manifestURL = URL.createObjectURL(blob);
+const link = document.createElement('link');
+link.rel = 'manifest'; link.href = manifestURL;
+document.currentScript.parentNode.appendChild(link);
+</script>
+<style>
+  :root {
+    --bg: #0a0a0f; --surface: #12121a; --card: #1a1a28; --border: #2a2a40;
+    --accent: #e8c84a; --accent2: #4a7fe8; --red: #e84a4a; --green: #4ae87a;
+    --text: #f0f0f8; --muted: #7070a0; --radius: 14px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html, body { height:100%; overflow:hidden; }
+  body {
+    font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text);
+    display:flex; flex-direction:column; width:100%; position:relative;
+  }
+  .header {
+    background:linear-gradient(135deg,#1a1030 0%,#0a0a1f 100%);
+    padding:16px 20px 12px; border-bottom:1px solid var(--border); flex-shrink:0;
+  }
+  .header-top { display:flex; align-items:center; justify-content:space-between; }
+  .logo-area { display:flex; align-items:center; gap:10px; }
+  .logo-badge {
+    width:40px; height:40px; background:linear-gradient(135deg,var(--accent),#d4a835);
+    border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:20px;
+  }
+  .logo-text h1 { font-family:'Black Han Sans',sans-serif; font-size:18px; letter-spacing:1px; color:var(--accent); }
+  .logo-text p { font-size:11px; color:var(--muted); margin-top:1px; }
+  .live-badge {
+    background:var(--red); color:white; font-size:10px; font-weight:700;
+    padding:3px 8px; border-radius:20px; letter-spacing:1px; animation:pulse 1.5s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.6} }
+  .content { flex:1; overflow-y:auto; overflow-x:hidden; padding-bottom:80px; }
+  .content::-webkit-scrollbar { display:none; }
+  .section { padding:16px 16px 0; }
+  .section-title {
+    font-family:'Black Han Sans',sans-serif; font-size:13px; letter-spacing:2px;
+    color:var(--muted); text-transform:uppercase; margin-bottom:12px;
+    display:flex; align-items:center; gap:8px;
+  }
+  .section-title::after { content:''; flex:1; height:1px; background:var(--border); }
+  .standings-card { background:var(--card); border-radius:var(--radius); overflow:hidden; border:1px solid var(--border); }
+  .standings-header {
+    display:grid; grid-template-columns:32px 1fr 28px 28px 28px 28px 40px;
+    padding:8px 14px; background:var(--surface);
+    font-size:10px; color:var(--muted); font-weight:600; letter-spacing:1px; text-transform:uppercase;
+  }
+  .standings-row {
+    display:grid; grid-template-columns:32px 1fr 28px 28px 28px 28px 40px;
+    padding:10px 14px; border-top:1px solid var(--border); align-items:center; transition:background .2s;
+  }
+  .standings-row:hover { background:rgba(232,200,74,.04); }
+  .pos { font-family:'Black Han Sans',sans-serif; font-size:16px; color:var(--muted); }
+  .pos.gold { color:#e8c84a; } .pos.silver { color:#b0b0c0; } .pos.bronze { color:#c87840; }
+  .team-info { display:flex; align-items:center; gap:8px; }
+  .flag { font-size:20px; }
+  .team-name { font-size:13px; font-weight:600; }
+  .stat { text-align:center; font-size:13px; font-weight:500; }
+  .pts { text-align:center; font-family:'Black Han Sans',sans-serif; font-size:15px; color:var(--accent); }
+  .matches-list { display:flex; flex-direction:column; gap:10px; }
+  .match-card {
+    background:var(--card); border-radius:var(--radius); padding:14px;
+    border:1px solid var(--border); position:relative; overflow:hidden;
+  }
+  .match-card.played { border-left:3px solid var(--muted); }
+  .match-card.upcoming { border-left:3px solid var(--accent2); }
+  .match-meta { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+  .round-tag { font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:3px 8px; border-radius:20px; }
+  .tag-played { background:rgba(112,112,160,.2); color:var(--muted); }
+  .tag-upcoming { background:rgba(74,127,232,.15); color:var(--accent2); }
+  .match-date { font-size:11px; color:var(--muted); }
+  .match-teams { display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:8px; }
+  .match-team { display:flex; flex-direction:column; align-items:center; gap:4px; }
+  .match-team.home { align-items:flex-start; } .match-team.away { align-items:flex-end; }
+  .match-flag { font-size:28px; }
+  .match-name { font-size:12px; font-weight:600; }
+  .score-box { display:flex; align-items:center; gap:4px; }
+  .score { font-family:'Black Han Sans',sans-serif; font-size:28px; min-width:36px; text-align:center; }
+  .score.win { color:var(--accent); } .score.lose { color:var(--muted); }
+  .score-sep { font-size:16px; color:var(--muted); font-weight:300; }
+  .score-tbd { font-family:'Black Han Sans',sans-serif; font-size:20px; color:var(--border); }
+  .match-venue { font-size:10px; color:var(--muted); text-align:center; margin-top:8px; }
+  .round-filter { display:flex; gap:8px; overflow-x:auto; padding:0 16px 12px; scrollbar-width:none; }
+  .round-filter::-webkit-scrollbar { display:none; }
+  .round-btn {
+    flex-shrink:0; padding:6px 14px; border-radius:20px; font-size:12px; font-weight:600;
+    cursor:pointer; border:1px solid var(--border); background:var(--card); color:var(--muted); transition:all .2s;
+  }
+  .round-btn.active { background:var(--accent); color:var(--bg); border-color:var(--accent); }
+  .bottom-nav {
+    position:fixed; bottom:0; left:0; width:100%;
+    background:rgba(10,10,15,.95); backdrop-filter:blur(20px);
+    border-top:1px solid var(--border);
+    display:flex; padding:8px 0 calc(20px + env(safe-area-inset-bottom)); z-index:100;
+  }
+  .nav-btn { flex:1; display:flex; flex-direction:column; align-items:center; gap:4px; cursor:pointer; padding:6px 0; transition:all .2s; }
+  .nav-icon { font-size:22px; }
+  .nav-label { font-size:10px; font-weight:600; color:var(--muted); letter-spacing:.5px; }
+  .nav-btn.active .nav-label { color:var(--accent); }
+  .nav-btn.active .nav-icon { filter:drop-shadow(0 0 6px var(--accent)); }
+  .page { display:none; } .page.active { display:block; }
+  .hero {
+    margin:16px; border-radius:var(--radius);
+    background:linear-gradient(135deg,#1e1040 0%,#102040 100%);
+    padding:20px; border:1px solid var(--border); position:relative; overflow:hidden;
+  }
+  .hero::before { content:'🏉'; position:absolute; right:-10px; top:-10px; font-size:80px; opacity:.08; transform:rotate(20deg); }
+  .hero-sub { font-size:11px; color:var(--accent); font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:6px; }
+  .hero-title { font-family:'Black Han Sans',sans-serif; font-size:26px; line-height:1.1; margin-bottom:12px; }
+  .hero-flags { font-size:24px; letter-spacing:4px; }
+  .hero-stats { display:flex; gap:16px; margin-top:14px; }
+  .hero-stat-val { font-family:'Black Han Sans',sans-serif; font-size:22px; color:var(--accent); }
+  .hero-stat-label { font-size:10px; color:var(--muted); }
+  .leader-card {
+    margin:0 16px 16px;
+    background:linear-gradient(135deg,rgba(232,200,74,.12),rgba(232,200,74,.04));
+    border:1px solid rgba(232,200,74,.3); border-radius:var(--radius); padding:14px;
+  }
+  .leader-label { font-size:10px; color:var(--accent); font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:6px; }
+  .leader-content { display:flex; align-items:center; gap:10px; }
+  .leader-flag { font-size:32px; }
+  .leader-name { font-family:'Black Han Sans',sans-serif; font-size:20px; }
+  .leader-pts { font-size:13px; color:var(--muted); }
+  .next-card {
+    margin:0 16px 16px; background:rgba(74,127,232,.08);
+    border:1px solid rgba(74,127,232,.25); border-radius:var(--radius); padding:14px;
+  }
+  .empty { text-align:center; padding:30px; color:var(--muted); font-size:14px; }
+  /* Install banner */
+  #install-banner {
+    display:none; position:fixed; bottom:calc(72px + env(safe-area-inset-bottom));
+    left:12px; right:12px; z-index:200;
+    background:linear-gradient(135deg,#1e1a10,#12100a);
+    border:1px solid rgba(232,200,74,.4); border-radius:16px;
+    padding:14px 16px; box-shadow:0 8px 32px rgba(0,0,0,.6);
+    animation:slideUp .35s cubic-bezier(.34,1.56,.64,1) forwards;
+  }
+  @keyframes slideUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+  #install-banner .ib-top { display:flex; align-items:center; gap:12px; }
+  #install-banner .ib-icon {
+    width:48px; height:48px; border-radius:12px; flex-shrink:0;
+    background:linear-gradient(135deg,var(--accent),#d4a835);
+    display:flex; align-items:center; justify-content:center; font-size:24px;
+  }
+  #install-banner .ib-text { flex:1; }
+  #install-banner .ib-title { font-family:'Black Han Sans',sans-serif; font-size:15px; color:var(--text); }
+  #install-banner .ib-sub { font-size:11px; color:var(--muted); margin-top:2px; }
+  #install-banner .ib-close {
+    width:28px; height:28px; border-radius:50%; background:var(--surface);
+    display:flex; align-items:center; justify-content:center;
+    font-size:14px; cursor:pointer; color:var(--muted); flex-shrink:0;
+  }
+  #install-banner .ib-actions { display:flex; gap:8px; margin-top:12px; }
+  #install-banner .ib-btn-install {
+    flex:1; padding:10px; border-radius:10px; font-weight:700; font-size:13px;
+    background:linear-gradient(135deg,var(--accent),#d4a835); color:var(--bg); cursor:pointer; text-align:center;
+  }
+  #install-banner .ib-btn-later {
+    padding:10px 16px; border-radius:10px; font-size:13px; font-weight:600;
+    background:var(--surface); color:var(--muted); cursor:pointer;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-top">
+    <div class="logo-area">
+      <div class="logo-badge">🏉</div>
+      <div class="logo-text">
+        <h1>6 NATIONS</h1>
+        <p>Tournoi 2026 · Édition 132</p>
+      </div>
+    </div>
+    <div class="live-badge">LIVE</div>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- HOME -->
+  <div class="page active" id="page-home">
+    <div class="hero">
+      <div class="hero-sub">Tournoi en cours</div>
+      <div class="hero-title">Guinness Six Nations 2026</div>
+      <div class="hero-flags">🏴󠁧󠁢󠁥󠁮󠁧󠁿🏴󠁧󠁢󠁳󠁣󠁴󠁿🏴󠁧󠁢󠁷󠁬󠁳󠁿🇮🇪🇫🇷🇮🇹</div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-val">5</div><div class="hero-stat-label">Journées</div></div>
+        <div class="hero-stat"><div class="hero-stat-val">15</div><div class="hero-stat-label">Matchs</div></div>
+        <div class="hero-stat"><div class="hero-stat-val">J3</div><div class="hero-stat-label">En cours</div></div>
+      </div>
+    </div>
+    <div class="leader-card">
+      <div class="leader-label">🥇 Leader actuel</div>
+      <div class="leader-content">
+        <div class="leader-flag">🇮🇪</div>
+        <div>
+          <div class="leader-name">Irlande</div>
+          <div class="leader-pts">14 pts · 2V 0D · +52 pts</div>
+        </div>
+      </div>
+    </div>
+    <div class="next-card">
+      <div class="leader-label" style="color:var(--accent2)">⏭ Prochain match</div>
+      <div style="display:flex;align-items:center;gap:10px;margin-top:6px">
+        <span style="font-size:24px">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+        <div style="flex:1">
+          <div style="font-weight:700;font-size:14px">Angleterre vs France</div>
+          <div style="font-size:11px;color:var(--muted)">Sam 7 mars · 16h45 · Twickenham</div>
+        </div>
+        <span style="font-size:24px">🇫🇷</span>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-title">Classement rapide</div>
+      <div class="standings-card">
+        <div class="standings-header"><div>#</div><div>Équipe</div><div>J</div><div>V</div><div>D</div><div>N</div><div>Pts</div></div>
+        <div class="standings-row"><div class="pos gold">1</div><div class="team-info"><span class="flag">🇮🇪</span><span class="team-name">Irlande</span></div><div class="stat">2</div><div class="stat">2</div><div class="stat">0</div><div class="stat">0</div><div class="pts">14</div></div>
+        <div class="standings-row"><div class="pos silver">2</div><div class="team-info"><span class="flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span><span class="team-name">Angleterre</span></div><div class="stat">2</div><div class="stat">2</div><div class="stat">0</div><div class="stat">0</div><div class="pts">10</div></div>
+        <div class="standings-row"><div class="pos bronze">3</div><div class="team-info"><span class="flag">🇫🇷</span><span class="team-name">France</span></div><div class="stat">2</div><div class="stat">1</div><div class="stat">1</div><div class="stat">0</div><div class="pts">9</div></div>
+        <div class="standings-row"><div class="pos">4</div><div class="team-info"><span class="flag">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span><span class="team-name">Écosse</span></div><div class="stat">2</div><div class="stat">1</div><div class="stat">1</div><div class="stat">0</div><div class="pts">5</div></div>
+        <div class="standings-row"><div class="pos">5</div><div class="team-info"><span class="flag">🏴󠁧󠁢󠁷󠁬󠁳󠁿</span><span class="team-name">Pays de Galles</span></div><div class="stat">2</div><div class="stat">0</div><div class="stat">2</div><div class="stat">0</div><div class="pts">2</div></div>
+        <div class="standings-row"><div class="pos">6</div><div class="team-info"><span class="flag">🇮🇹</span><span class="team-name">Italie</span></div><div class="stat">2</div><div class="stat">0</div><div class="stat">2</div><div class="stat">0</div><div class="pts">1</div></div>
+      </div>
+    </div>
+    <div style="height:16px"></div>
+  </div>
+
+  <!-- CLASSEMENT -->
+  <div class="page" id="page-classement">
+    <div class="section">
+      <div class="section-title">Classement général</div>
+      <div class="standings-card">
+        <div class="standings-header"><div>#</div><div>Équipe</div><div>J</div><div>V</div><div>D</div><div>N</div><div>Pts</div></div>
+        <div class="standings-row"><div class="pos gold">1</div><div class="team-info"><span class="flag">🇮🇪</span><span class="team-name">Irlande</span></div><div class="stat">2</div><div class="stat">2</div><div class="stat">0</div><div class="stat">0</div><div class="pts">14</div></div>
+        <div class="standings-row"><div class="pos silver">2</div><div class="team-info"><span class="flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span><span class="team-name">Angleterre</span></div><div class="stat">2</div><div class="stat">2</div><div class="stat">0</div><div class="stat">0</div><div class="pts">10</div></div>
+        <div class="standings-row"><div class="pos bronze">3</div><div class="team-info"><span class="flag">🇫🇷</span><span class="team-name">France</span></div><div class="stat">2</div><div class="stat">1</div><div class="stat">1</div><div class="stat">0</div><div class="pts">9</div></div>
+        <div class="standings-row"><div class="pos">4</div><div class="team-info"><span class="flag">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span><span class="team-name">Écosse</span></div><div class="stat">2</div><div class="stat">1</div><div class="stat">1</div><div class="stat">0</div><div class="pts">5</div></div>
+        <div class="standings-row"><div class="pos">5</div><div class="team-info"><span class="flag">🏴󠁧󠁢󠁷󠁬󠁳󠁿</span><span class="team-name">Pays de Galles</span></div><div class="stat">2</div><div class="stat">0</div><div class="stat">2</div><div class="stat">0</div><div class="pts">2</div></div>
+        <div class="standings-row"><div class="pos">6</div><div class="team-info"><span class="flag">🇮🇹</span><span class="team-name">Italie</span></div><div class="stat">2</div><div class="stat">0</div><div class="stat">2</div><div class="stat">0</div><div class="pts">1</div></div>
+      </div>
+    </div>
+    <div class="section" style="margin-top:16px">
+      <div class="section-title">Différence de points</div>
+      <div class="standings-card">
+        <div style="padding:12px 14px">
+          <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border)">
+            <span style="font-size:18px">🇮🇪</span>
+            <div style="flex:1"><div style="height:8px;background:var(--surface);border-radius:4px;overflow:hidden"><div style="width:100%;height:100%;background:linear-gradient(90deg,var(--accent),#d4a835);border-radius:4px"></div></div></div>
+            <span style="font-family:'Black Han Sans',sans-serif;color:var(--accent);min-width:40px;text-align:right">+52</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border)">
+            <span style="font-size:18px">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+            <div style="flex:1"><div style="height:8px;background:var(--surface);border-radius:4px;overflow:hidden"><div style="width:75%;height:100%;background:linear-gradient(90deg,#b0b0e0,#8080c0);border-radius:4px"></div></div></div>
+            <span style="font-family:'Black Han Sans',sans-serif;color:#b0b0e0;min-width:40px;text-align:right">+39</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border)">
+            <span style="font-size:18px">🇫🇷</span>
+            <div style="flex:1"><div style="height:8px;background:var(--surface);border-radius:4px;overflow:hidden"><div style="width:55%;height:100%;background:linear-gradient(90deg,#4a7fe8,#3060c0);border-radius:4px"></div></div></div>
+            <span style="font-family:'Black Han Sans',sans-serif;color:var(--accent2);min-width:40px;text-align:right">+14</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border)">
+            <span style="font-size:18px">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span>
+            <div style="flex:1"><div style="height:8px;background:var(--surface);border-radius:4px;overflow:hidden"><div style="width:30%;height:100%;background:linear-gradient(90deg,#6060a0,#404080);border-radius:4px"></div></div></div>
+            <span style="font-family:'Black Han Sans',sans-serif;color:var(--muted);min-width:40px;text-align:right">-3</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border)">
+            <span style="font-size:18px">🏴󠁧󠁢󠁷󠁬󠁳󠁿</span>
+            <div style="flex:1"><div style="height:8px;background:var(--surface);border-radius:4px;overflow:hidden"><div style="width:15%;height:100%;background:linear-gradient(90deg,var(--red),#c03030);border-radius:4px"></div></div></div>
+            <span style="font-family:'Black Han Sans',sans-serif;color:var(--red);min-width:40px;text-align:right">-48</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:8px 0">
+            <span style="font-size:18px">🇮🇹</span>
+            <div style="flex:1"><div style="height:8px;background:var(--surface);border-radius:4px;overflow:hidden"><div style="width:8%;height:100%;background:linear-gradient(90deg,#c04040,#903030);border-radius:4px"></div></div></div>
+            <span style="font-family:'Black Han Sans',sans-serif;color:var(--red);min-width:40px;text-align:right">-54</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="height:16px"></div>
+  </div>
+
+  <!-- MATCHS -->
+  <div class="page" id="page-matchs">
+    <div class="round-filter" id="round-filter">
+      <div class="round-btn active" onclick="filterRound('all',this)">Tous</div>
+      <div class="round-btn" onclick="filterRound('1',this)">J1</div>
+      <div class="round-btn" onclick="filterRound('2',this)">J2</div>
+      <div class="round-btn" onclick="filterRound('3',this)">J3</div>
+      <div class="round-btn" onclick="filterRound('4',this)">J4</div>
+      <div class="round-btn" onclick="filterRound('5',this)">J5</div>
+    </div>
+    <div class="section" style="padding-top:0">
+      <div class="matches-list" id="matches-list"></div>
+    </div>
+    <div style="height:16px"></div>
+  </div>
+
+</div>
+
+<!-- BOTTOM NAV -->
+<div class="bottom-nav">
+  <div class="nav-btn active" onclick="showPage('home',this)"><div class="nav-icon">🏠</div><div class="nav-label">Accueil</div></div>
+  <div class="nav-btn" onclick="showPage('classement',this)"><div class="nav-icon">🏆</div><div class="nav-label">Classement</div></div>
+  <div class="nav-btn" onclick="showPage('matchs',this)"><div class="nav-icon">📅</div><div class="nav-label">Matchs</div></div>
+</div>
+
+<!-- INSTALL BANNER -->
+<div id="install-banner">
+  <div class="ib-top">
+    <div class="ib-icon">🏉</div>
+    <div class="ib-text">
+      <div class="ib-title">6 Nations 2026</div>
+      <div class="ib-sub">Installer l'app sur votre écran d'accueil</div>
+    </div>
+    <div class="ib-close" onclick="dismissBanner()">✕</div>
+  </div>
+  <div class="ib-actions">
+    <div class="ib-btn-install" onclick="installApp()">⬇️ Installer</div>
+    <div class="ib-btn-later" onclick="dismissBanner()">Plus tard</div>
+  </div>
+</div>
+
+<script>
+const matches = [
+  { round:1, status:'played', date:'1 fév 2026', time:'15h00', home:{flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',name:'Angleterre'}, away:{flag:'🇮🇪',name:'Irlande'}, score:{h:17,a:22}, venue:'Twickenham, Londres' },
+  { round:1, status:'played', date:'1 fév 2026', time:'17h15', home:{flag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿',name:'Écosse'}, away:{flag:'🇮🇹',name:'Italie'}, score:{h:31,a:13}, venue:'Murrayfield, Édimbourg' },
+  { round:1, status:'played', date:'2 fév 2026', time:'15h30', home:{flag:'🇫🇷',name:'France'}, away:{flag:'🏴󠁧󠁢󠁷󠁬󠁳󠁿',name:'Pays de Galles'}, score:{h:45,a:7}, venue:'Stade de France, Paris' },
+  { round:2, status:'played', date:'8 fév 2026', time:'15h00', home:{flag:'🇮🇪',name:'Irlande'}, away:{flag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿',name:'Écosse'}, score:{h:32,a:12}, venue:'Aviva Stadium, Dublin' },
+  { round:2, status:'played', date:'8 fév 2026', time:'17h15', home:{flag:'🏴󠁧󠁢󠁷󠁬󠁳󠁿',name:'Pays de Galles'}, away:{flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',name:'Angleterre'}, score:{h:10,a:33}, venue:'Principality Stadium, Cardiff' },
+  { round:2, status:'played', date:'9 fév 2026', time:'15h30', home:{flag:'🇮🇹',name:'Italie'}, away:{flag:'🇫🇷',name:'France'}, score:{h:17,a:24}, venue:'Olimpico, Rome' },
+  { round:3, status:'upcoming', date:'7 mars 2026', time:'14h15', home:{flag:'🇮🇪',name:'Irlande'}, away:{flag:'🏴󠁧󠁢󠁷󠁬󠁳󠁿',name:'Pays de Galles'}, score:{h:null,a:null}, venue:'Aviva Stadium, Dublin' },
+  { round:3, status:'upcoming', date:'7 mars 2026', time:'16h45', home:{flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',name:'Angleterre'}, away:{flag:'🇫🇷',name:'France'}, score:{h:null,a:null}, venue:'Twickenham, Londres' },
+  { round:3, status:'upcoming', date:'8 mars 2026', time:'15h00', home:{flag:'🇮🇹',name:'Italie'}, away:{flag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿',name:'Écosse'}, score:{h:null,a:null}, venue:'Olimpico, Rome' },
+  { round:4, status:'upcoming', date:'14 mars 2026', time:'14h15', home:{flag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿',name:'Écosse'}, away:{flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',name:'Angleterre'}, score:{h:null,a:null}, venue:'Murrayfield, Édimbourg' },
+  { round:4, status:'upcoming', date:'14 mars 2026', time:'16h45', home:{flag:'🏴󠁧󠁢󠁷󠁬󠁳󠁿',name:'Pays de Galles'}, away:{flag:'🇮🇹',name:'Italie'}, score:{h:null,a:null}, venue:'Principality Stadium, Cardiff' },
+  { round:4, status:'upcoming', date:'15 mars 2026', time:'15h30', home:{flag:'🇫🇷',name:'France'}, away:{flag:'🇮🇪',name:'Irlande'}, score:{h:null,a:null}, venue:'Stade de France, Paris' },
+  { round:5, status:'upcoming', date:'21 mars 2026', time:'14h00', home:{flag:'🏴󠁧󠁢󠁷󠁬󠁳󠁿',name:'Pays de Galles'}, away:{flag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿',name:'Écosse'}, score:{h:null,a:null}, venue:'Principality Stadium, Cardiff' },
+  { round:5, status:'upcoming', date:'21 mars 2026', time:'15h45', home:{flag:'🇮🇹',name:'Italie'}, away:{flag:'🇮🇪',name:'Irlande'}, score:{h:null,a:null}, venue:'Olimpico, Rome' },
+  { round:5, status:'upcoming', date:'21 mars 2026', time:'17h45', home:{flag:'🇫🇷',name:'France'}, away:{flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',name:'Angleterre'}, score:{h:null,a:null}, venue:'Stade de France, Paris' },
+];
+
+function getWinner(m) {
+  if (m.status !== 'played') return null;
+  if (m.score.h > m.score.a) return 'home';
+  if (m.score.a > m.score.h) return 'away';
+  return 'draw';
+}
+
+function renderMatches(filter) {
+  const list = document.getElementById('matches-list');
+  const filtered = filter === 'all' ? matches : matches.filter(m => m.round == filter);
+  if (!filtered.length) { list.innerHTML = '<div class="empty">Aucun match</div>'; return; }
+  let html = '', lastRound = null;
+  filtered.forEach(m => {
+    if (filter === 'all' && m.round !== lastRound) {
+      lastRound = m.round;
+      html += `<div class="section-title" style="padding:8px 0 4px">Journée ${m.round}</div>`;
+    }
+    const w = getWinner(m);
+    const hC = w==='home'?'win':w==='away'?'lose':'';
+    const aC = w==='away'?'win':w==='home'?'lose':'';
+    const cardC = m.status==='played'?'played':'upcoming';
+    const tagC = m.status==='played'?'tag-played':'tag-upcoming';
+    const tagT = m.status==='played'?'Terminé':'À venir';
+    const scoreHtml = m.status==='played'
+      ? `<div class="score-box"><div class="score ${hC}">${m.score.h}</div><div class="score-sep">–</div><div class="score ${aC}">${m.score.a}</div></div>`
+      : `<div class="score-box"><div class="score-tbd">vs</div></div>`;
+    html += `<div class="match-card ${cardC}">
+      <div class="match-meta"><span class="round-tag ${tagC}">${tagT}</span><span class="match-date">${m.date} · ${m.time}</span></div>
+      <div class="match-teams">
+        <div class="match-team home"><div class="match-flag">${m.home.flag}</div><div class="match-name">${m.home.name}</div></div>
+        ${scoreHtml}
+        <div class="match-team away"><div class="match-flag">${m.away.flag}</div><div class="match-name">${m.away.name}</div></div>
+      </div>
+      <div class="match-venue">📍 ${m.venue}</div>
+    </div>`;
+  });
+  list.innerHTML = html;
+}
+
+function filterRound(round, btn) {
+  document.querySelectorAll('.round-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderMatches(round);
+}
+
+function showPage(name, btn) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  btn.classList.add('active');
+}
+
+renderMatches('all');
+
+// ── PWA Install Banner ────────────────────────────────────
+let deferredPrompt = null;
+const banner = document.getElementById('install-banner');
+
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  deferredPrompt = e;
+  setTimeout(() => { banner.style.display = 'block'; }, 2000);
+});
+
+function installApp() {
+  if (!deferredPrompt) return;
+  deferredPrompt.prompt();
+  deferredPrompt.userChoice.then(r => {
+    banner.style.display = 'none';
+    deferredPrompt = null;
+  });
+}
+
+function dismissBanner() {
+  banner.style.display = 'none';
+}
+
+window.addEventListener('appinstalled', () => { banner.style.display = 'none'; });
+
+// ── Inline Service Worker via blob ────────────────────────
+const swCode = `
+const CACHE = '6nations-v1';
+const ASSETS = [location.href];
+self.addEventListener('install', e => {
+  e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)));
+  self.skipWaiting();
+});
+self.addEventListener('activate', e => {
+  e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k=>k!==CACHE).map(k=>caches.delete(k)))));
+  self.clients.claim();
+});
+self.addEventListener('fetch', e => {
+  e.respondWith(caches.match(e.request).then(r => r || fetch(e.request).then(res => {
+    const clone = res.clone();
+    caches.open(CACHE).then(c => c.put(e.request, clone));
+    return res;
+  }).catch(() => caches.match(ASSETS[0]))));
+});
+`;
+if ('serviceWorker' in navigator) {
+  const swBlob = new Blob([swCode], {type: 'text/javascript'});
+  const swURL = URL.createObjectURL(swBlob);
+  navigator.serviceWorker.register(swURL, {scope: './'}
+  ).then(() => console.log('SW blob ok')).catch(e => console.warn('SW:', e));
+}
+</script>
+</body>
+</html>
